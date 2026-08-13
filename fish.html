@@ -63,7 +63,7 @@
     .game-btn.area { background: linear-gradient(#b8f0a8, #6bc85a); color: #1a4a10; box-shadow: 0 3px 0 #3a8a2a; }
 
     .controls {
-        position: absolute; z-index: 20; bottom: 90px; left: 50%; transform: translateX(-50%);
+        position: absolute; z-index: 20; bottom: 95px; left: 50%; transform: translateX(-50%);
         color: white; font-size: 11px; padding: 4px 10px; border-radius: 16px;
         background: rgba(2,40,67,.55); pointer-events: none; white-space: nowrap;
     }
@@ -171,40 +171,26 @@
     }
     .xp-bar { height: 100%; background: linear-gradient(90deg,#5ee,#2af); border-radius: 6px; transition: width .3s; }
 
-    /* ===== Animations ===== */
     .wave { animation: waveMove 3s linear infinite; }
     .wave2 { animation: waveMove 4.5s linear infinite reverse; }
     @keyframes waveMove { from { transform: translateX(0); } to { transform: translateX(-80px); } }
-
     .cloud { animation: cloudMove 35s linear infinite; }
     @keyframes cloudMove { from { transform: translateX(-120px); } to { transform: translateX(920px); } }
-
     .bird { animation: birdMove 22s linear infinite; }
     @keyframes birdMove { from { transform: translateX(-80px); } to { transform: translateX(880px); } }
-
     .bubble { animation: bubbleRise 6s ease-in infinite; }
     @keyframes bubbleRise {
         0%   { transform: translateY(0) scale(1); opacity: .4; }
         100% { transform: translateY(-180px) scale(1.3); opacity: 0; }
     }
-
     .glow-pulse { animation: glowPulse 3s ease-in-out infinite alternate; }
-    @keyframes glowPulse {
-        from { opacity: .35; }
-        to   { opacity: .85; }
-    }
-
+    @keyframes glowPulse { from { opacity: .35; } to { opacity: .85; } }
     .lily { animation: lilyBob 4s ease-in-out infinite alternate; }
-    @keyframes lilyBob {
-        from { transform: translateY(0); }
-        to   { transform: translateY(-3px); }
-    }
-
+    @keyframes lilyBob { from { transform: translateY(0); } to { transform: translateY(-3px); } }
     .fish-body { transform-box: fill-box; transform-origin: center; animation: fishBob .5s ease-in-out infinite alternate; }
     @keyframes fishBob { from { transform: translateY(-2px); } to { transform: translateY(2px); } }
     .jelly-body { animation: jellyBob .8s ease-in-out infinite alternate; }
     @keyframes jellyBob { from { transform: translateY(-3px); } to { transform: translateY(4px); } }
-
     svg { display: block; }
 </style>
 </head>
@@ -245,11 +231,9 @@
             <filter id="boatShadow"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#00344c" flood-opacity=".5"/></filter>
         </defs>
 
-        <!-- ===================== OCEAN THEME ===================== -->
+        <!-- ===================== OCEAN ===================== -->
         <g id="bgOcean">
-            <!-- Sky -->
             <rect width="800" height="250" fill="url(#skyGradient)"/>
-            <!-- Sun + rays -->
             <circle cx="640" cy="85" r="110" fill="url(#sunGlow)"/>
             <circle cx="640" cy="85" r="40" fill="#ffe87a"/>
             <g stroke="#ffe87a" stroke-width="2" opacity=".35" stroke-linecap="round">
@@ -257,7 +241,6 @@
                 <line x1="710" y1="85" x2="730" y2="85"/><line x1="690" y1="135" x2="705" y2="150"/>
                 <line x1="590" y1="35" x2="575" y2="20"/><line x1="570" y1="85" x2="550" y2="85"/>
             </g>
-            <!-- Clouds -->
             <g class="cloud" opacity=".8">
                 <ellipse cx="130" cy="70" rx="50" ry="18" fill="#fff"/><circle cx="100" cy="62" r="22" fill="#fff"/>
                 <circle cx="135" cy="52" r="28" fill="#fff"/><circle cx="165" cy="65" r="20" fill="#fff"/>
@@ -266,24 +249,14 @@
                 <ellipse cx="130" cy="70" rx="50" ry="18" fill="#fff"/><circle cx="100" cy="62" r="22" fill="#fff"/>
                 <circle cx="135" cy="52" r="28" fill="#fff"/><circle cx="165" cy="65" r="20" fill="#fff"/>
             </g>
-            <g class="cloud" opacity=".4" transform="translate(200 90)">
-                <ellipse cx="80" cy="50" rx="35" ry="12" fill="#fff"/><circle cx="60" cy="45" r="15" fill="#fff"/>
-                <circle cx="90" cy="40" r="18" fill="#fff"/>
-            </g>
-            <!-- Birds / Seagulls -->
             <g class="bird" fill="none" stroke="#3a6a7a" stroke-width="2.5" stroke-linecap="round">
                 <path d="M0 75 Q12 62 24 75 Q36 62 48 75"/>
                 <path d="M60 105 Q70 94 80 105 Q90 94 100 105"/>
-                <path d="M20 130 Q28 122 36 130"/>
             </g>
-            <!-- Horizon haze -->
             <path d="M0 215 Q100 200 200 215 T400 215 T600 215 T800 215 L800 255 L0 255 Z" fill="#5ad0e0" opacity=".5"/>
-            <!-- Ocean body -->
             <rect y="245" width="800" height="355" fill="url(#oceanGradient)"/>
-            <!-- Depth bands -->
             <path d="M0 310 Q200 290 400 310 T800 310 L800 380 Q600 360 400 380 T0 380 Z" fill="#0870a0" opacity=".25"/>
             <path d="M0 420 Q200 400 400 420 T800 420 L800 500 Q600 480 400 500 T0 500 Z" fill="#035080" opacity=".3"/>
-            <!-- Surface waves -->
             <g class="wave" opacity=".9">
                 <path d="M0 244 Q20 232 40 244 T80 244 T120 244 T160 244 T200 244 T240 244 T280 244 T320 244 T360 244 T400 244 T440 244 T480 244 T520 244 T560 244 T600 244 T640 244 T680 244 T720 244 T760 244 T800 244
                          L800 262 Q780 250 760 262 T720 262 T680 262 T640 262 T600 262 T560 262 T520 262 T480 262 T440 262 T400 262 T360 262 T320 262 T280 262 T240 262 T200 262 T160 262 T120 262 T80 262 T40 262 T0 262 Z" fill="#d0f8ff"/>
@@ -292,185 +265,122 @@
                 <path d="M0 258 Q30 246 60 258 T120 258 T180 258 T240 258 T300 258 T360 258 T420 258 T480 258 T540 258 T600 258 T660 258 T720 258 T780 258 T800 258
                          L800 272 Q770 262 740 272 T680 272 T620 272 T560 272 T500 272 T440 272 T380 272 T320 272 T260 272 T200 272 T140 272 T80 272 T20 272 T0 272 Z" fill="#fff"/>
             </g>
-            <!-- Bubbles -->
             <g fill="#9ceaff" opacity=".35">
-                <circle class="bubble" cx="90" cy="480" r="5" style="animation-delay:0s"/>
-                <circle class="bubble" cx="130" cy="510" r="3" style="animation-delay:1.5s"/>
-                <circle class="bubble" cx="700" cy="450" r="6" style="animation-delay:.8s"/>
-                <circle class="bubble" cx="660" cy="500" r="3.5" style="animation-delay:2.2s"/>
-                <circle class="bubble" cx="280" cy="530" r="4" style="animation-delay:3s"/>
-                <circle class="bubble" cx="420" cy="490" r="2.5" style="animation-delay:1s"/>
-                <circle class="bubble" cx="550" cy="520" r="4.5" style="animation-delay:2.8s"/>
+                <circle class="bubble" cx="90" cy="480" r="5"/><circle class="bubble" cx="130" cy="510" r="3" style="animation-delay:1.5s"/>
+                <circle class="bubble" cx="700" cy="450" r="6" style="animation-delay:.8s"/><circle class="bubble" cx="660" cy="500" r="3.5" style="animation-delay:2.2s"/>
+                <circle class="bubble" cx="280" cy="530" r="4" style="animation-delay:3s"/><circle class="bubble" cx="420" cy="490" r="2.5" style="animation-delay:1s"/>
             </g>
-            <!-- Seabed -->
             <path d="M0 565 Q100 545 200 565 T400 565 T600 565 T800 565 L800 600 L0 600 Z" fill="#054a70"/>
-            <!-- Coral & rocks -->
-            <ellipse cx="180" cy="575" rx="40" ry="14" fill="#2a5a6e"/>
-            <ellipse cx="480" cy="580" rx="55" ry="16" fill="#2a5a6e"/>
-            <ellipse cx="680" cy="572" rx="35" ry="12" fill="#2a5a6e"/>
-            <!-- Coral shapes -->
+            <ellipse cx="180" cy="575" rx="40" ry="14" fill="#2a5a6e"/><ellipse cx="480" cy="580" rx="55" ry="16" fill="#2a5a6e"/>
             <g fill="#e07060" opacity=".85">
                 <path d="M150 575 Q145 540 155 520 Q160 545 158 575"/><path d="M165 575 Q170 535 180 515 Q175 550 172 575"/>
-                <path d="M140 575 Q130 550 138 530"/>
             </g>
-            <g fill="#f0a050" opacity=".8">
-                <path d="M500 580 Q495 550 505 530 Q510 555 508 580"/><path d="M515 580 Q525 545 530 525 Q522 560 520 580"/>
-            </g>
-            <!-- Seaweed -->
             <g stroke="#0a8a60" stroke-width="7" fill="none" stroke-linecap="round">
                 <path d="M70 580 Q55 530 75 495 Q90 535 85 580"/><path d="M95 580 Q105 540 125 510 Q115 550 110 580"/>
-                <path d="M720 580 Q700 535 720 500 Q735 545 735 580"/><path d="M745 580 Q760 540 780 520"/>
-                <path d="M320 580 Q310 545 325 515 Q335 550 330 580"/><path d="M600 580 Q590 540 610 510"/>
+                <path d="M720 580 Q700 535 720 500 Q735 545 735 580"/><path d="M320 580 Q310 545 325 515 Q335 550 330 580"/>
             </g>
         </g>
 
-        <!-- ===================== LAKE THEME ===================== -->
+        <!-- ===================== LAKE ===================== -->
         <g id="bgLake" style="display:none">
-            <!-- Soft sky -->
             <rect width="800" height="250" fill="url(#lakeSky)"/>
-            <!-- Distant mountains -->
-            <path d="M0 180 L80 120 L160 160 L240 100 L320 150 L400 90 L480 140 L560 85 L640 145 L720 110 L800 160 L800 250 L0 250 Z"
-                  fill="#7aa8c0" opacity=".55"/>
-            <path d="M0 200 L100 150 L200 185 L300 130 L400 170 L500 120 L600 165 L700 135 L800 180 L800 250 L0 250 Z"
-                  fill="#5a90a8" opacity=".45"/>
-            <!-- Soft sun -->
+            <path d="M0 180 L80 120 L160 160 L240 100 L320 150 L400 90 L480 140 L560 85 L640 145 L720 110 L800 160 L800 250 L0 250 Z" fill="#7aa8c0" opacity=".55"/>
+            <path d="M0 200 L100 150 L200 185 L300 130 L400 170 L500 120 L600 165 L700 135 L800 180 L800 250 L0 250 Z" fill="#5a90a8" opacity=".45"/>
             <circle cx="150" cy="75" r="45" fill="#fff5c8" opacity=".9"/>
             <circle cx="150" cy="75" r="70" fill="#fff5c8" opacity=".2"/>
-            <!-- Light clouds -->
             <g opacity=".6">
                 <ellipse cx="400" cy="55" rx="60" ry="16" fill="#fff"/><circle cx="370" cy="50" r="20" fill="#fff"/>
                 <circle cx="410" cy="42" r="24" fill="#fff"/><circle cx="445" cy="52" r="18" fill="#fff"/>
             </g>
-            <g opacity=".4" transform="translate(200 30)">
-                <ellipse cx="100" cy="50" rx="45" ry="12" fill="#fff"/><circle cx="75" cy="46" r="16" fill="#fff"/>
-                <circle cx="115" cy="40" r="18" fill="#fff"/>
-            </g>
-            <!-- Shore trees silhouette -->
             <g fill="#2a6a40" opacity=".7">
                 <path d="M30 220 Q20 180 35 150 Q50 180 45 220"/><path d="M55 220 Q60 175 75 155 Q70 190 68 220"/>
-                <path d="M750 225 Q740 185 755 155 Q770 190 765 225"/><path d="M775 225 Q785 180 795 160"/>
+                <path d="M750 225 Q740 185 755 155 Q770 190 765 225"/>
             </g>
-            <!-- Water -->
             <rect y="245" width="800" height="355" fill="url(#lakeWater)"/>
-            <!-- Soft depth -->
             <path d="M0 340 Q200 320 400 340 T800 340 L800 420 Q600 400 400 420 T0 420 Z" fill="#0a7a50" opacity=".2"/>
-            <path d="M0 450 Q200 430 400 450 T800 450 L800 520 Q600 500 400 520 T0 520 Z" fill="#064a30" opacity=".25"/>
-            <!-- Gentle surface -->
-            <path d="M0 248 Q50 240 100 248 T200 248 T300 248 T400 248 T500 248 T600 248 T700 248 T800 248
-                     L800 260 Q750 252 700 260 T600 260 T500 260 T400 260 T300 260 T200 260 T100 260 T0 260 Z"
-                  fill="#b8ffe0" opacity=".35"/>
-            <!-- Lily pads -->
+            <path d="M0 248 Q50 240 100 248 T200 248 T300 248 T400 248 T500 248 T600 248 T700 248 T800 248 L800 260 Q750 252 700 260 T600 260 T500 260 T400 260 T300 260 T200 260 T100 260 T0 260 Z" fill="#b8ffe0" opacity=".35"/>
             <g class="lily" fill="#2a9a50">
-                <ellipse cx="120" cy="320" rx="28" ry="12"/><ellipse cx="135" cy="318" rx="10" ry="6" fill="#1a7a38"/>
-                <ellipse cx="280" cy="350" rx="22" ry="10"/><ellipse cx="290" cy="348" rx="8" ry="5" fill="#1a7a38"/>
-                <ellipse cx="520" cy="310" rx="30" ry="13"/><ellipse cx="535" cy="308" rx="11" ry="6" fill="#1a7a38"/>
-                <ellipse cx="650" cy="360" rx="20" ry="9"/><ellipse cx="660" cy="358" rx="7" ry="4" fill="#1a7a38"/>
-                <ellipse cx="400" cy="380" rx="18" ry="8"/>
+                <ellipse cx="120" cy="320" rx="28" ry="12"/><ellipse cx="280" cy="350" rx="22" ry="10"/>
+                <ellipse cx="520" cy="310" rx="30" ry="13"/><ellipse cx="650" cy="360" rx="20" ry="9"/>
             </g>
-            <!-- Reeds / Cattails -->
             <g stroke="#2a7a40" stroke-width="4" fill="none" stroke-linecap="round">
-                <path d="M60 580 Q55 520 62 480"/><path d="M75 580 Q80 530 78 490"/><path d="M90 580 Q85 540 92 500"/>
-                <path d="M720 580 Q715 525 722 485"/><path d="M740 580 Q748 535 742 495"/><path d="M755 580 Q750 545 758 510"/>
+                <path d="M60 580 Q55 520 62 480"/><path d="M75 580 Q80 530 78 490"/><path d="M720 580 Q715 525 722 485"/>
             </g>
-            <g fill="#c8a030">
-                <ellipse cx="62" cy="475" rx="5" ry="10"/><ellipse cx="78" cy="485" rx="4" ry="9"/>
-                <ellipse cx="722" cy="480" rx="5" ry="10"/><ellipse cx="742" cy="490" rx="4" ry="8"/>
-            </g>
-            <!-- Dragonfly -->
-            <g opacity=".7" transform="translate(300 280)">
-                <ellipse cx="0" cy="0" rx="8" ry="3" fill="#4a8a6a"/>
-                <line x1="-12" y1="-6" x2="12" y2="6" stroke="#a0d0c0" stroke-width="1.5"/>
-                <line x1="-12" y1="6" x2="12" y2="-6" stroke="#a0d0c0" stroke-width="1.5"/>
-            </g>
-            <!-- Lake bed -->
             <path d="M0 570 Q120 555 240 570 T480 570 T720 570 T800 575 L800 600 L0 600 Z" fill="#0a4a30"/>
-            <!-- Soft rocks -->
-            <ellipse cx="200" cy="580" rx="45" ry="14" fill="#3a6a50"/><ellipse cx="500" cy="585" rx="35" ry="12" fill="#3a6a50"/>
         </g>
 
-        <!-- ===================== DEEP SEA THEME ===================== -->
+        <!-- ===================== DEEP SEA ===================== -->
         <g id="bgDeep" style="display:none">
-            <!-- Near-black sky / surface -->
             <rect width="800" height="250" fill="url(#deepSky)"/>
-            <!-- Faint surface light rays -->
             <g opacity=".12" fill="#6a9ec0">
                 <path d="M200 0 L230 250 L270 250 L240 0 Z"/><path d="M400 0 L420 250 L460 250 L440 0 Z"/>
                 <path d="M580 0 L600 250 L640 250 L620 0 Z"/>
             </g>
-            <!-- Distant faint moon / light -->
             <circle cx="650" cy="60" r="28" fill="url(#moonGlow)"/>
             <circle cx="650" cy="60" r="18" fill="#c8d8f0" opacity=".5"/>
-            <!-- Stars -->
             <g fill="#c0d0e8" opacity=".5">
                 <circle cx="80" cy="40" r="1.2"/><circle cx="150" cy="70" r="0.8"/><circle cx="300" cy="30" r="1.5"/>
                 <circle cx="450" cy="55" r="1"/><circle cx="520" cy="25" r="0.9"/><circle cx="720" cy="45" r="1.3"/>
-                <circle cx="100" cy="100" r="0.7"/><circle cx="380" cy="80" r="1.1"/>
             </g>
-            <!-- Deep water -->
             <rect y="245" width="800" height="355" fill="url(#deepWater)"/>
-            <!-- Depth layers -->
             <path d="M0 320 Q200 300 400 320 T800 320 L800 400 Q600 380 400 400 T0 400 Z" fill="#062a45" opacity=".4"/>
             <path d="M0 440 Q200 420 400 440 T800 440 L800 520 Q600 500 400 520 T0 520 Z" fill="#021520" opacity=".5"/>
-            <!-- Bioluminescent particles -->
             <g class="glow-pulse">
                 <circle cx="100" cy="380" r="2.5" fill="#40e0d0"/><circle cx="250" cy="450" r="1.8" fill="#70a0ff"/>
                 <circle cx="400" cy="360" r="2.2" fill="#a0ffc0"/><circle cx="550" cy="480" r="3" fill="#40e0d0"/>
                 <circle cx="700" cy="400" r="1.5" fill="#ff80c0"/><circle cx="180" cy="520" r="2" fill="#70a0ff"/>
-                <circle cx="480" cy="540" r="1.6" fill="#a0ffc0"/><circle cx="620" cy="350" r="2.4" fill="#40e0d0"/>
-                <circle cx="320" cy="490" r="1.3" fill="#ff80c0"/><circle cx="750" cy="500" r="2" fill="#70a0ff"/>
             </g>
-            <!-- Glowing anemones / plants -->
             <g>
                 <path d="M80 580 Q70 540 85 510 Q95 545 90 580" fill="none" stroke="#30c8a0" stroke-width="5" opacity=".7" class="glow-pulse"/>
-                <path d="M100 580 Q110 545 105 515" fill="none" stroke="#50a0ff" stroke-width="4" opacity=".6" class="glow-pulse"/>
-                <circle cx="85" cy="508" r="4" fill="#40ffd0" opacity=".8" class="glow-pulse"/>
                 <path d="M700 580 Q690 535 710 505 Q720 545 715 580" fill="none" stroke="#c060ff" stroke-width="5" opacity=".65" class="glow-pulse"/>
-                <path d="M730 580 Q745 540 735 515" fill="none" stroke="#30c8a0" stroke-width="4" opacity=".55" class="glow-pulse"/>
+                <circle cx="85" cy="508" r="4" fill="#40ffd0" opacity=".8" class="glow-pulse"/>
                 <circle cx="710" cy="503" r="5" fill="#e080ff" opacity=".75" class="glow-pulse"/>
             </g>
-            <!-- Shipwreck silhouette -->
             <g fill="#1a3040" opacity=".7">
                 <path d="M280 560 L320 520 L420 525 L450 560 L430 575 L300 575 Z"/>
                 <rect x="340" y="500" width="8" height="40" rx="1"/>
-                <path d="M360 510 L400 505 L395 520 L365 522 Z"/>
             </g>
-            <!-- Trench lines -->
             <path d="M0 575 Q150 560 300 578 T600 570 T800 580 L800 600 L0 600 Z" fill="#01060c"/>
-            <path d="M150 590 Q200 570 280 585" fill="none" stroke="#0a2030" stroke-width="8" opacity=".6"/>
-            <!-- Slow rising bubbles -->
             <g fill="#306080" opacity=".3">
-                <circle class="bubble" cx="200" cy="500" r="4" style="animation-duration:9s;animation-delay:0s"/>
+                <circle class="bubble" cx="200" cy="500" r="4" style="animation-duration:9s"/>
                 <circle class="bubble" cx="500" cy="530" r="3" style="animation-duration:11s;animation-delay:2s"/>
-                <circle class="bubble" cx="650" cy="480" r="5" style="animation-duration:8s;animation-delay:1s"/>
-                <circle class="bubble" cx="350" cy="550" r="2.5" style="animation-duration:10s;animation-delay:3.5s"/>
             </g>
         </g>
 
         <g id="fishLayer"></g>
 
+        <!-- Hook / Line (adjusted for new boat height) -->
         <g id="hookSystem">
-            <line id="fishingLine" x1="400" y1="160" x2="400" y2="285" stroke="#f5f5f5" stroke-width="2.5"/>
+            <line id="fishingLine" x1="400" y1="200" x2="400" y2="295" stroke="#f5f5f5" stroke-width="2.5"/>
             <g id="hook">
-                <path d="M400 280 L400 300 C400 313 415 318 422 306 C425 301 425 296 422 293" fill="none" stroke="#f4f4f4" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="400" cy="282" r="5" fill="#e8e8e8"/>
+                <path d="M400 290 L400 310 C400 323 415 328 422 316 C425 311 425 306 422 303"
+                      fill="none" stroke="#f4f4f4" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="400" cy="292" r="5" fill="#e8e8e8"/>
             </g>
         </g>
 
+        <!-- ===================== BOAT (ต่ำลงให้อยู่บนน้ำ) ===================== -->
         <g id="boat" filter="url(#boatShadow)">
-            <path d="M315 145 L485 145 L465 190 Q400 210 335 190 Z" fill="#f07b3f" stroke="#783b2b" stroke-width="3"/>
-            <path d="M326 164 Q400 184 474 164 L465 185 Q400 201 335 185 Z" fill="#ffd45c"/>
-            <path d="M325 145 Q400 132 475 145 L485 155 Q400 143 315 155 Z" fill="#f8f0ce" stroke="#783b2b" stroke-width="3"/>
-            <path d="M360 140 L365 108 L435 108 L440 140 Z" fill="#e9f8ff" stroke="#78402f" stroke-width="3"/>
-            <rect x="372" y="115" width="20" height="18" rx="3" fill="#62c9e9"/>
-            <rect x="402" y="115" width="20" height="18" rx="3" fill="#62c9e9"/>
-            <circle cx="400" cy="91" r="12" fill="#ffd0a5"/>
-            <path d="M386 106 Q400 98 414 106 L418 132 L382 132 Z" fill="#2d73c5"/>
-            <path d="M386 88 Q400 75 414 88 L412 93 L388 93 Z" fill="#ef654b"/>
-            <path d="M382 91 Q400 87 418 92" stroke="#9b3c31" stroke-width="5" stroke-linecap="round"/>
-            <path d="M387 109 L405 119 L423 101" fill="none" stroke="#ffd0a5" stroke-width="7" stroke-linecap="round"/>
-            <path id="rodPath" d="M405 119 L455 35" fill="none" stroke="#633d29" stroke-width="5" stroke-linecap="round"/>
-            <path d="M455 35 Q480 43 492 60" fill="none" stroke="#633d29" stroke-width="2"/>
-            <circle cx="420" cy="120" r="7" fill="#777" stroke="#333" stroke-width="2"/>
+            <!-- Hull – อยู่บนผิวน้ำประมาณ y=245 -->
+            <path d="M315 185 L485 185 L465 230 Q400 250 335 230 Z"
+                  fill="#f07b3f" stroke="#783b2b" stroke-width="3"/>
+            <path d="M326 204 Q400 224 474 204 L465 225 Q400 241 335 225 Z" fill="#ffd45c"/>
+            <path d="M325 185 Q400 172 475 185 L485 195 Q400 183 315 195 Z"
+                  fill="#f8f0ce" stroke="#783b2b" stroke-width="3"/>
+            <!-- Cabin -->
+            <path d="M360 180 L365 148 L435 148 L440 180 Z" fill="#e9f8ff" stroke="#78402f" stroke-width="3"/>
+            <rect x="372" y="155" width="20" height="18" rx="3" fill="#62c9e9"/>
+            <rect x="402" y="155" width="20" height="18" rx="3" fill="#62c9e9"/>
+            <!-- Fisherman -->
+            <circle cx="400" cy="131" r="12" fill="#ffd0a5"/>
+            <path d="M386 146 Q400 138 414 146 L418 172 L382 172 Z" fill="#2d73c5"/>
+            <path d="M386 128 Q400 115 414 128 L412 133 L388 133 Z" fill="#ef654b"/>
+            <path d="M382 131 Q400 127 418 132" stroke="#9b3c31" stroke-width="5" stroke-linecap="round"/>
+            <path d="M387 149 L405 159 L423 141" fill="none" stroke="#ffd0a5" stroke-width="7" stroke-linecap="round"/>
+            <!-- Rod -->
+            <path d="M405 159 L455 75" fill="none" stroke="#633d29" stroke-width="5" stroke-linecap="round"/>
+            <path d="M455 75 Q480 83 492 100" fill="none" stroke="#633d29" stroke-width="2"/>
+            <circle cx="420" cy="160" r="7" fill="#777" stroke="#333" stroke-width="2"/>
         </g>
     </svg>
 
@@ -506,12 +416,8 @@
 
     <div class="overlay" id="overlay">
         <div class="panel">
-            <h1 id="overlayTitle">🎣 Fishy Fun Pro!</h1>
-            <p id="overlayDescription">
-                Catch fish, level up, buy better gear!<br>
-                Move the boat, change areas, and watch out for jellyfish.
-            </p>
-            <div class="score-final" id="finalScore" style="display:none"></div>
+            <h1>🎣 Fishy Fun Pro!</h1>
+            <p>Catch fish, level up, buy better gear!<br>Move the boat, change areas, and watch out for jellyfish.</p>
             <button class="main-btn" id="startButton">Start Game</button>
         </div>
     </div>
@@ -557,7 +463,6 @@
 
 <script>
 const game = document.getElementById("game");
-const svg = document.getElementById("world");
 const fishLayer = document.getElementById("fishLayer");
 const fishingLine = document.getElementById("fishingLine");
 const hook = document.getElementById("hook");
@@ -568,12 +473,15 @@ const xpBar = document.getElementById("xpBar");
 const xpText = document.getElementById("xpText");
 const areaNameEl = document.getElementById("areaName");
 const scoreBox = document.getElementById("scoreBox");
-
 const overlay = document.getElementById("overlay");
 const startButton = document.getElementById("startButton");
 
 const WIDTH = 800, HEIGHT = 600;
-const HOOK_START_Y = 285, HOOK_BOTTOM_Y = 550;
+
+/* ===== ปรับความลึก ===== */
+const HOOK_START_Y = 295;   // จุดเริ่มต้นเบ็ด (ใต้เรือ)
+const HOOK_BOTTOM_Y = 580;  // ลึกขึ้น (เดิม 550)
+const LINE_TOP_Y = 200;     // จุดที่เส้นเบ็ดติดกับคันเบ็ด
 
 let gameRunning = false, paused = false;
 let score = 0, level = 1, xp = 0, xpToNext = 100;
@@ -770,9 +678,7 @@ function createFishGraphic(type, direction) {
 function updateFishGraphic(fish) {
     if (!fish.element) return;
     let t = `translate(${fish.x},${fish.y})`;
-    if (fish.direction < 0) {
-        t += ` scale(-1,1) translate(${-fish.width},0)`;
-    }
+    if (fish.direction < 0) t += ` scale(-1,1) translate(${-fish.width},0)`;
     fish.element.setAttribute("transform", t);
 }
 
@@ -797,7 +703,8 @@ function spawnFish() {
     const type = pickFishType();
     const data = FISH_TYPES[type];
     const direction = Math.random() < 0.5 ? 1 : -1;
-    const y = random(300, 535);
+    // ปลาเกิดได้ลึกขึ้น
+    const y = random(310, 560);
     const x = direction === 1 ? -data.width - 10 : WIDTH + 10;
     const speed = random(data.speedMin, data.speedMax);
 
@@ -909,7 +816,7 @@ function addXP(amount) {
         t.textContent = `LEVEL ${level}!`;
         const rect = game.getBoundingClientRect();
         t.style.left = `${boatX * (rect.width / WIDTH)}px`;
-        t.style.top  = `${160 * (rect.height / HEIGHT)}px`;
+        t.style.top  = `${200 * (rect.height / HEIGHT)}px`;
         game.appendChild(t);
         setTimeout(() => t.remove(), 1200);
     }
@@ -923,16 +830,18 @@ function updateXPUI() {
     xpText.textContent = `${xp} / ${xpToNext}`;
 }
 
-function updateScore() {
-    scoreEl.textContent = score;
-}
+function updateScore() { scoreEl.textContent = score; }
 
 function updateHookGraphic() {
     fishingLine.setAttribute("x1", hookX);
-    fishingLine.setAttribute("y1", 155);
+    fishingLine.setAttribute("y1", LINE_TOP_Y);
     fishingLine.setAttribute("x2", hookX);
     fishingLine.setAttribute("y2", hookY);
-    hook.setAttribute("transform", `translate(${hookX - 400},${hookY - HOOK_START_Y})`);
+
+    // เบ็ดเลื่อนตาม
+    hook.setAttribute("transform", `translate(${hookX - 400}, ${hookY - HOOK_START_Y})`);
+
+    // เรือเลื่อนแนวนอนอย่างเดียว (Y ติดน้ำแล้ว)
     boat.setAttribute("transform", `translate(${boatX - 400}, 0)`);
 
     if (caughtFish) {
@@ -959,7 +868,10 @@ function updateHook(dt) {
         if (hookX <= leftLimit)  { hookX = leftLimit;  hookDirection = 1; }
     } else if (hookState === "dropping") {
         hookY += getCastSpeed() * dt;
-        if (hookY >= HOOK_BOTTOM_Y) { hookY = HOOK_BOTTOM_Y; hookState = "retracting"; }
+        if (hookY >= HOOK_BOTTOM_Y) {
+            hookY = HOOK_BOTTOM_Y;
+            hookState = "retracting";
+        }
     } else if (hookState === "retracting") {
         hookY -= getRetractSpeed() * dt;
         if (hookY <= HOOK_START_Y) {
