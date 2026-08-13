@@ -27,13 +27,13 @@
     #world { position: absolute; inset: 0; width: 100%; height: 100%; }
 
     .hud {
-        position: absolute; z-index: 20; top: 12px; left: 12px; right: 12px;
-        display: flex; justify-content: space-between; gap: 8px; pointer-events: none;
+        position: absolute; z-index: 20; top: 10px; left: 10px; right: 10px;
+        display: flex; justify-content: space-between; gap: 6px; pointer-events: none;
         flex-wrap: wrap;
     }
     .hud-box {
-        min-width: 90px; padding: 6px 12px; border-radius: 12px; color: white;
-        background: rgba(4,42,72,.78); border: 2px solid rgba(255,255,255,.3);
+        min-width: 78px; padding: 5px 10px; border-radius: 12px; color: white;
+        background: rgba(4,42,72,.80); border: 2px solid rgba(255,255,255,.3);
         box-shadow: 0 4px 12px rgba(0,0,0,.2); text-shadow: 0 1px 2px rgba(0,0,0,.3);
         transition: transform .15s;
     }
@@ -43,15 +43,15 @@
         40% { transform: scale(1.12); }
         100% { transform: scale(1); }
     }
-    .hud-label { font-size: 10px; font-weight: bold; opacity: .75; text-transform: uppercase; letter-spacing: .5px; }
-    .hud-value { font-size: 20px; font-weight: 900; line-height: 22px; }
+    .hud-label { font-size: 9px; font-weight: bold; opacity: .75; text-transform: uppercase; letter-spacing: .5px; }
+    .hud-value { font-size: 17px; font-weight: 900; line-height: 20px; }
 
     .btn-bar {
         position: absolute; z-index: 25; bottom: 10px; left: 50%; transform: translateX(-50%);
-        display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+        display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
     }
     .game-btn {
-        border: 0; padding: 8px 16px; border-radius: 999px; font-size: 13px; font-weight: 800;
+        border: 0; padding: 7px 14px; border-radius: 999px; font-size: 12px; font-weight: 800;
         color: #063d5c; background: linear-gradient(#ffe981, #ffbd3f);
         box-shadow: 0 3px 0 #c77a24, 0 6px 12px rgba(0,0,0,.2);
         cursor: pointer; transition: transform .1s; pointer-events: auto;
@@ -63,7 +63,7 @@
     .game-btn.area { background: linear-gradient(#b8f0a8, #6bc85a); color: #1a4a10; box-shadow: 0 3px 0 #3a8a2a; }
 
     .controls {
-        position: absolute; z-index: 20; bottom: 95px; left: 50%; transform: translateX(-50%);
+        position: absolute; z-index: 20; bottom: 52px; left: 50%; transform: translateX(-50%);
         color: white; font-size: 11px; padding: 4px 10px; border-radius: 16px;
         background: rgba(2,40,67,.55); pointer-events: none; white-space: nowrap;
     }
@@ -132,26 +132,25 @@
     .overlay.hidden { opacity: 0; pointer-events: none; }
 
     .panel {
-        width: min(92%, 440px); max-height: 90%; overflow-y: auto;
-        padding: 24px; text-align: center; color: white; border-radius: 22px;
+        width: min(94%, 460px); max-height: 92%; overflow-y: auto;
+        padding: 22px; text-align: center; color: white; border-radius: 22px;
         background: linear-gradient(145deg, rgba(7,74,111,.97), rgba(4,43,76,.97));
         border: 3px solid rgba(255,255,255,.25); box-shadow: 0 20px 50px rgba(0,0,0,.35);
     }
-    .panel h1 { margin: 0 0 6px; font-size: clamp(26px,6vw,42px); text-shadow: 0 3px 0 #174e70; }
-    .panel p { margin: 6px 0 14px; line-height: 1.45; color: #d9f7ff; font-size: 14px; }
-    .score-final { font-size: 26px; font-weight: 900; margin: 10px 0 16px; color: #ffe36e; }
+    .panel h1 { margin: 0 0 6px; font-size: clamp(24px,5.5vw,40px); text-shadow: 0 3px 0 #174e70; }
+    .panel p { margin: 6px 0 12px; line-height: 1.45; color: #d9f7ff; font-size: 14px; }
 
     button.main-btn {
-        border: 0; padding: 12px 28px; border-radius: 999px; font-size: 16px; font-weight: 900;
+        border: 0; padding: 11px 26px; border-radius: 999px; font-size: 15px; font-weight: 900;
         color: #063d5c; background: linear-gradient(#ffe981,#ffbd3f);
         box-shadow: 0 4px 0 #c77a24, 0 8px 16px rgba(0,0,0,.25); cursor: pointer; margin: 4px;
     }
     button.main-btn:hover { transform: translateY(-2px); }
 
-    .shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; text-align: left; }
+    .shop-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; text-align: left; }
     .shop-item {
         background: rgba(0,30,50,.55); border: 2px solid rgba(255,255,255,.2);
-        border-radius: 12px; padding: 10px; font-size: 12px; cursor: pointer;
+        border-radius: 12px; padding: 9px; font-size: 12px; cursor: pointer;
         transition: border-color .15s, background .15s;
     }
     .shop-item:hover { border-color: #ffe36e; background: rgba(0,40,70,.7); }
@@ -159,15 +158,44 @@
     .shop-item.equipped { border-color: #ffd92f; box-shadow: 0 0 0 2px #ffd92f; }
     .shop-item .price { color: #ffe36e; font-weight: 800; }
     .shop-item .name { font-weight: 800; font-size: 13px; }
-    .shop-tabs { display: flex; gap: 6px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
+
+    .rarity-common { color: #b0b0b0; }
+    .rarity-uncommon { color: #4caf50; }
+    .rarity-rare { color: #2196f3; }
+    .rarity-epic { color: #9c27b0; }
+    .rarity-legendary { color: #ff9800; text-shadow: 0 0 6px #ff9800; }
+
+    .shop-tabs { display: flex; gap: 5px; justify-content: center; margin-bottom: 10px; flex-wrap: wrap; }
     .shop-tab {
-        padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 800;
+        padding: 5px 11px; border-radius: 999px; font-size: 11px; font-weight: 800;
         background: rgba(255,255,255,.15); border: 0; color: white; cursor: pointer;
     }
     .shop-tab.active { background: #ffe36e; color: #063d5c; }
 
+    .gacha-result {
+        margin: 12px 0; padding: 14px; border-radius: 14px;
+        background: rgba(0,0,0,.35); font-size: 15px; font-weight: 800;
+        min-height: 52px; display: flex; align-items: center; justify-content: center; text-align: center;
+    }
+
+    .inv-section-title {
+        grid-column: 1 / -1;
+        margin: 12px 0 4px;
+        font-weight: 900;
+        font-size: 14px;
+        color: #ffe36e;
+        border-bottom: 1px solid rgba(255,255,255,.2);
+        padding-bottom: 4px;
+    }
+    .inv-empty {
+        grid-column: 1 / -1;
+        opacity: 0.6;
+        font-size: 12px;
+        margin-bottom: 6px;
+    }
+
     .xp-bar-wrap {
-        width: 100%; height: 10px; background: rgba(0,0,0,.35); border-radius: 6px; margin: 8px 0 4px; overflow: hidden;
+        width: 100%; height: 9px; background: rgba(0,0,0,.35); border-radius: 6px; margin: 6px 0 3px; overflow: hidden;
     }
     .xp-bar { height: 100%; background: linear-gradient(90deg,#5ee,#2af); border-radius: 6px; transition: width .3s; }
 
@@ -217,6 +245,24 @@
             <linearGradient id="deepWater" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#0a3a5c"/><stop offset="50%" stop-color="#041828"/><stop offset="100%" stop-color="#01080f"/>
             </linearGradient>
+            <linearGradient id="iceSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c8e8ff"/><stop offset="100%" stop-color="#e8f4ff"/>
+            </linearGradient>
+            <linearGradient id="iceWater" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a0d8f0"/><stop offset="50%" stop-color="#60a8c8"/><stop offset="100%" stop-color="#2a6080"/>
+            </linearGradient>
+            <linearGradient id="volSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4a2010"/><stop offset="100%" stop-color="#2a1008"/>
+            </linearGradient>
+            <linearGradient id="volWater" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8a3020"/><stop offset="50%" stop-color="#5a1810"/><stop offset="100%" stop-color="#2a0808"/>
+            </linearGradient>
+            <linearGradient id="spaceSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#05010a"/><stop offset="100%" stop-color="#000005"/>
+            </linearGradient>
+            <linearGradient id="spaceWater" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1a0a30"/><stop offset="50%" stop-color="#0a0418"/><stop offset="100%" stop-color="#020008"/>
+            </linearGradient>
             <radialGradient id="sunGlow">
                 <stop offset="0%" stop-color="#fff8d0" stop-opacity=".95"/>
                 <stop offset="55%" stop-color="#ffe070" stop-opacity=".4"/>
@@ -231,7 +277,7 @@
             <filter id="boatShadow"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#00344c" flood-opacity=".5"/></filter>
         </defs>
 
-        <!-- ===================== OCEAN ===================== -->
+        <!-- OCEAN -->
         <g id="bgOcean">
             <rect width="800" height="250" fill="url(#skyGradient)"/>
             <circle cx="640" cy="85" r="110" fill="url(#sunGlow)"/>
@@ -281,7 +327,7 @@
             </g>
         </g>
 
-        <!-- ===================== LAKE ===================== -->
+        <!-- LAKE -->
         <g id="bgLake" style="display:none">
             <rect width="800" height="250" fill="url(#lakeSky)"/>
             <path d="M0 180 L80 120 L160 160 L240 100 L320 150 L400 90 L480 140 L560 85 L640 145 L720 110 L800 160 L800 250 L0 250 Z" fill="#7aa8c0" opacity=".55"/>
@@ -309,7 +355,7 @@
             <path d="M0 570 Q120 555 240 570 T480 570 T720 570 T800 575 L800 600 L0 600 Z" fill="#0a4a30"/>
         </g>
 
-        <!-- ===================== DEEP SEA ===================== -->
+        <!-- DEEP SEA -->
         <g id="bgDeep" style="display:none">
             <rect width="800" height="250" fill="url(#deepSky)"/>
             <g opacity=".12" fill="#6a9ec0">
@@ -347,9 +393,66 @@
             </g>
         </g>
 
+        <!-- ICE -->
+        <g id="bgIce" style="display:none">
+            <rect width="800" height="250" fill="url(#iceSky)"/>
+            <path d="M0 40 Q100 10 200 50 T400 20 T600 60 T800 30 L800 100 Q600 70 400 90 T0 80 Z" fill="#80ffd0" opacity=".15"/>
+            <g fill="#fff" opacity=".7">
+                <circle cx="50" cy="40" r="2"/><circle cx="120" cy="80" r="1.5"/><circle cx="300" cy="30" r="2"/>
+                <circle cx="450" cy="70" r="1.5"/><circle cx="600" cy="25" r="2"/><circle cx="720" cy="60" r="1.5"/>
+            </g>
+            <path d="M80 245 L120 180 L180 245 Z" fill="#d0f0ff" opacity=".9"/>
+            <path d="M550 245 L600 160 L680 245 Z" fill="#c0e8ff" opacity=".85"/>
+            <path d="M300 245 L340 200 L390 245 Z" fill="#e0f4ff" opacity=".8"/>
+            <rect y="245" width="800" height="355" fill="url(#iceWater)"/>
+            <path d="M0 248 L100 252 L200 247 L350 253 L500 248 L650 252 L800 249 L800 265 L0 265 Z" fill="#e8f8ff" opacity=".5"/>
+            <path d="M0 560 Q200 540 400 560 T800 555 L800 600 L0 600 Z" fill="#1a4060"/>
+            <g fill="#b0e0f0" opacity=".6"><ellipse cx="150" cy="575" rx="40" ry="12"/><ellipse cx="500" cy="580" rx="50" ry="14"/></g>
+        </g>
+
+        <!-- VOLCANO -->
+        <g id="bgVolcano" style="display:none">
+            <rect width="800" height="250" fill="url(#volSky)"/>
+            <circle cx="400" cy="120" r="80" fill="#ff6020" opacity=".15"/>
+            <g fill="#4a3020" opacity=".6">
+                <ellipse cx="150" cy="60" rx="70" ry="20"/><ellipse cx="500" cy="40" rx="90" ry="25"/><ellipse cx="700" cy="70" rx="50" ry="15"/>
+            </g>
+            <path d="M200 245 L320 80 L380 245 Z" fill="#2a1010"/>
+            <path d="M500 245 L580 100 L650 245 Z" fill="#1a0808"/>
+            <path d="M310 100 Q350 70 370 100" fill="#ff4010" opacity=".8"/>
+            <path d="M560 120 Q590 90 620 120" fill="#ff5018" opacity=".7"/>
+            <rect y="245" width="800" height="355" fill="url(#volWater)"/>
+            <path d="M100 400 Q150 380 200 410 T300 390" fill="none" stroke="#ff4010" stroke-width="3" opacity=".4"/>
+            <path d="M500 450 Q550 430 600 460 T700 440" fill="none" stroke="#ff6020" stroke-width="2" opacity=".35"/>
+            <path d="M0 570 Q200 550 400 570 T800 560 L800 600 L0 600 Z" fill="#1a0505"/>
+            <g fill="#3a1510"><ellipse cx="200" cy="580" rx="45" ry="14"/><ellipse cx="550" cy="575" rx="60" ry="16"/></g>
+        </g>
+
+        <!-- SPACE -->
+        <g id="bgSpace" style="display:none">
+            <rect width="800" height="250" fill="url(#spaceSky)"/>
+            <g fill="#e0e8ff">
+                <circle cx="40" cy="30" r="1.2"/><circle cx="100" cy="70" r="0.8"/><circle cx="180" cy="25" r="1.5"/>
+                <circle cx="280" cy="55" r="1"/><circle cx="350" cy="20" r="0.7"/><circle cx="450" cy="80" r="1.3"/>
+                <circle cx="520" cy="35" r="1"/><circle cx="600" cy="60" r="0.9"/><circle cx="680" cy="25" r="1.4"/>
+                <circle cx="750" cy="70" r="1"/><circle cx="90" cy="120" r="0.6"/><circle cx="400" cy="100" r="1.1"/>
+            </g>
+            <ellipse cx="200" cy="100" rx="100" ry="40" fill="#6020a0" opacity=".2"/>
+            <ellipse cx="600" cy="80" rx="80" ry="30" fill="#2060c0" opacity=".15"/>
+            <circle cx="700" cy="50" r="35" fill="#4060a0" opacity=".7"/>
+            <circle cx="100" cy="180" r="25" fill="#4080c0" opacity=".5"/>
+            <rect y="245" width="800" height="355" fill="url(#spaceWater)"/>
+            <g class="glow-pulse" fill="#a080ff" opacity=".5">
+                <circle cx="150" cy="350" r="2"/><circle cx="300" cy="420" r="1.5"/><circle cx="500" cy="380" r="2.5"/>
+                <circle cx="650" cy="480" r="1.8"/><circle cx="400" cy="520" r="2"/>
+            </g>
+            <path d="M0 575 Q200 560 400 575 T800 570 L800 600 L0 600 Z" fill="#050010"/>
+            <ellipse cx="250" cy="560" rx="30" ry="12" fill="#3a2a4a" opacity=".7"/>
+            <ellipse cx="600" cy="570" rx="40" ry="14" fill="#2a1a3a" opacity=".6"/>
+        </g>
+
         <g id="fishLayer"></g>
 
-        <!-- Hook / Line (adjusted for new boat height) -->
         <g id="hookSystem">
             <line id="fishingLine" x1="400" y1="200" x2="400" y2="295" stroke="#f5f5f5" stroke-width="2.5"/>
             <g id="hook">
@@ -359,25 +462,18 @@
             </g>
         </g>
 
-        <!-- ===================== BOAT (ต่ำลงให้อยู่บนน้ำ) ===================== -->
         <g id="boat" filter="url(#boatShadow)">
-            <!-- Hull – อยู่บนผิวน้ำประมาณ y=245 -->
-            <path d="M315 185 L485 185 L465 230 Q400 250 335 230 Z"
-                  fill="#f07b3f" stroke="#783b2b" stroke-width="3"/>
+            <path d="M315 185 L485 185 L465 230 Q400 250 335 230 Z" fill="#f07b3f" stroke="#783b2b" stroke-width="3"/>
             <path d="M326 204 Q400 224 474 204 L465 225 Q400 241 335 225 Z" fill="#ffd45c"/>
-            <path d="M325 185 Q400 172 475 185 L485 195 Q400 183 315 195 Z"
-                  fill="#f8f0ce" stroke="#783b2b" stroke-width="3"/>
-            <!-- Cabin -->
+            <path d="M325 185 Q400 172 475 185 L485 195 Q400 183 315 195 Z" fill="#f8f0ce" stroke="#783b2b" stroke-width="3"/>
             <path d="M360 180 L365 148 L435 148 L440 180 Z" fill="#e9f8ff" stroke="#78402f" stroke-width="3"/>
             <rect x="372" y="155" width="20" height="18" rx="3" fill="#62c9e9"/>
             <rect x="402" y="155" width="20" height="18" rx="3" fill="#62c9e9"/>
-            <!-- Fisherman -->
             <circle cx="400" cy="131" r="12" fill="#ffd0a5"/>
             <path d="M386 146 Q400 138 414 146 L418 172 L382 172 Z" fill="#2d73c5"/>
             <path d="M386 128 Q400 115 414 128 L412 133 L388 133 Z" fill="#ef654b"/>
             <path d="M382 131 Q400 127 418 132" stroke="#9b3c31" stroke-width="5" stroke-linecap="round"/>
             <path d="M387 149 L405 159 L423 141" fill="none" stroke="#ffd0a5" stroke-width="7" stroke-linecap="round"/>
-            <!-- Rod -->
             <path d="M405 159 L455 75" fill="none" stroke="#633d29" stroke-width="5" stroke-linecap="round"/>
             <path d="M455 75 Q480 83 492 100" fill="none" stroke="#633d29" stroke-width="2"/>
             <circle cx="420" cy="160" r="7" fill="#777" stroke="#333" stroke-width="2"/>
@@ -393,23 +489,31 @@
             <div class="hud-label">Level</div>
             <div class="hud-value" id="level">1</div>
         </div>
-        <div class="hud-box" style="min-width:140px">
+        <div class="hud-box" style="min-width:120px">
             <div class="hud-label">XP</div>
             <div class="xp-bar-wrap"><div class="xp-bar" id="xpBar" style="width:0%"></div></div>
-            <div style="font-size:11px" id="xpText">0 / 100</div>
+            <div style="font-size:10px" id="xpText">0 / 100</div>
+        </div>
+        <div class="hud-box">
+            <div class="hud-label">Pet</div>
+            <div class="hud-value" id="petName" style="font-size:12px">None</div>
+        </div>
+        <div class="hud-box">
+            <div class="hud-label">Charm</div>
+            <div class="hud-value" id="charmName" style="font-size:12px">None</div>
         </div>
         <div class="hud-box" style="text-align:right">
             <div class="hud-label">Area</div>
-            <div class="hud-value" id="areaName" style="font-size:14px">Ocean</div>
+            <div class="hud-value" id="areaName" style="font-size:13px">Ocean</div>
         </div>
     </div>
 
-    <div class="controls">← → / A D = ขับเรือ | Click / SPACE = โยนเบ็ด | Shop / Area / Upgrade</div>
+    <div class="controls">← → / A D = ขับเรือ | Click / SPACE = โยนเบ็ด | Gacha เบ็ด·เหยื่อ·สัตว์เลี้ยง·เครื่องราง</div>
 
     <div class="btn-bar">
         <button class="game-btn pause" id="pauseBtn">⏸ Pause</button>
         <button class="game-btn" id="restartBtn">🔄 Restart</button>
-        <button class="game-btn shop" id="shopBtn">🛒 Shop</button>
+        <button class="game-btn shop" id="shopBtn">🎲 Gacha</button>
         <button class="game-btn area" id="areaBtn">🗺 Area</button>
         <button class="game-btn" id="upgradeBtn">⬆ Upgrade</button>
     </div>
@@ -417,20 +521,29 @@
     <div class="overlay" id="overlay">
         <div class="panel">
             <h1>🎣 Fishy Fun Pro!</h1>
-            <p>Catch fish, level up, buy better gear!<br>Move the boat, change areas, and watch out for jellyfish.</p>
+            <p>6 ด่าน • Gacha • สัตว์เลี้ยงช่วยจับปลา • เครื่องราง<br>ปลาคะแนนสูงในด่านหลัง</p>
             <button class="main-btn" id="startButton">Start Game</button>
         </div>
     </div>
 
     <div class="overlay hidden" id="shopOverlay">
         <div class="panel">
-            <h1>🛒 Shop</h1>
+            <h1>🎲 Gacha Shop</h1>
             <p>Coins: <span id="shopCoins">0</span></p>
             <div class="shop-tabs">
-                <button class="shop-tab active" data-tab="rods">Rods</button>
-                <button class="shop-tab" data-tab="bait">Bait</button>
+                <button class="shop-tab active" data-tab="rod">Rod (80)</button>
+                <button class="shop-tab" data-tab="bait">Bait (50)</button>
+                <button class="shop-tab" data-tab="pet">Pet (120)</button>
+                <button class="shop-tab" data-tab="charm">Charm (100)</button>
+                <button class="shop-tab" data-tab="inv">Inventory</button>
             </div>
-            <div class="shop-grid" id="shopGrid"></div>
+            <div id="gachaArea">
+                <div class="gacha-result" id="gachaResult">เลือกประเภทแล้วกดสุ่ม</div>
+                <button class="main-btn" id="pullBtn">สุ่ม 1 ครั้ง</button>
+            </div>
+            <div id="invArea" style="display:none">
+                <div class="shop-grid" id="invGrid"></div>
+            </div>
             <button class="main-btn" id="closeShop">Close</button>
         </div>
     </div>
@@ -473,15 +586,15 @@ const xpBar = document.getElementById("xpBar");
 const xpText = document.getElementById("xpText");
 const areaNameEl = document.getElementById("areaName");
 const scoreBox = document.getElementById("scoreBox");
+const petNameEl = document.getElementById("petName");
+const charmNameEl = document.getElementById("charmName");
 const overlay = document.getElementById("overlay");
 const startButton = document.getElementById("startButton");
 
 const WIDTH = 800, HEIGHT = 600;
-
-/* ===== ปรับความลึก ===== */
-const HOOK_START_Y = 295;   // จุดเริ่มต้นเบ็ด (ใต้เรือ)
-const HOOK_BOTTOM_Y = 580;  // ลึกขึ้น (เดิม 550)
-const LINE_TOP_Y = 200;     // จุดที่เส้นเบ็ดติดกับคันเบ็ด
+const HOOK_START_Y = 295;
+const HOOK_BOTTOM_Y = 580;
+const LINE_TOP_Y = 200;
 
 let gameRunning = false, paused = false;
 let score = 0, level = 1, xp = 0, xpToNext = 100;
@@ -493,607 +606,860 @@ let hookState = "swinging", hookDirection = 1;
 let caughtFish = null;
 let keys = { left: false, right: false };
 
-let ownedRods = ["basic"];
-let equippedRod = "basic";
-let ownedBait = ["none"];
-let equippedBait = "none";
+let ownedRods = [{id:"basic", rarity:"common"}];
+let equippedRod = {id:"basic", rarity:"common"};
+let ownedBaits = [{id:"none", rarity:"common"}];
+let equippedBait = {id:"none", rarity:"common"};
+let ownedPets = [];
+let equippedPet = null;
+let ownedCharms = [];
+let equippedCharm = null;
+let currentGachaTab = "rod";
 let upgrades = { castSpeed: 0, swingRange: 0, luck: 0 };
 
+const RARITY_WEIGHTS = {common:52, uncommon:26, rare:13, epic:7, legendary:2};
+const RARITY_CLS = {common:"rarity-common", uncommon:"rarity-uncommon", rare:"rarity-rare", epic:"rarity-epic", legendary:"rarity-legendary"};
+const GACHA_COST = {rod:80, bait:50, pet:120, charm:100};
+
+const ROD_POOL = {
+  common: [
+    {id:"wood", name:"Wood Rod", drop:280, retract:320, range:140, bonus:1.0},
+    {id:"basic", name:"Basic Rod", drop:300, retract:340, range:150, bonus:1.05}
+  ],
+  uncommon: [
+    {id:"iron", name:"Iron Rod", drop:340, retract:380, range:170, bonus:1.15},
+    {id:"steel", name:"Steel Rod", drop:360, retract:400, range:180, bonus:1.2}
+  ],
+  rare: [
+    {id:"silver", name:"Silver Rod", drop:400, retract:450, range:200, bonus:1.35},
+    {id:"gold", name:"Gold Rod", drop:420, retract:470, range:210, bonus:1.4}
+  ],
+  epic: [
+    {id:"crystal", name:"Crystal Rod", drop:480, retract:530, range:240, bonus:1.6},
+    {id:"dragon", name:"Dragon Rod", drop:500, retract:550, range:250, bonus:1.7}
+  ],
+  legendary: [
+    {id:"cosmic", name:"Cosmic Rod", drop:560, retract:620, range:280, bonus:2.0},
+    {id:"god", name:"God Rod", drop:600, retract:650, range:300, bonus:2.2}
+  ]
+};
+
+const BAIT_POOL = {
+  common: [
+    {id:"none", name:"No Bait", luck:0, rareB:0},
+    {id:"worm", name:"Worm", luck:3, rareB:0.01}
+  ],
+  uncommon: [
+    {id:"shrimp", name:"Shrimp", luck:8, rareB:0.03},
+    {id:"minnow", name:"Minnow", luck:10, rareB:0.04}
+  ],
+  rare: [
+    {id:"squid", name:"Squid", luck:16, rareB:0.07},
+    {id:"crab", name:"Crab", luck:18, rareB:0.08}
+  ],
+  epic: [
+    {id:"golden", name:"Golden Bait", luck:28, rareB:0.12},
+    {id:"rainbow", name:"Rainbow Bait", luck:32, rareB:0.14}
+  ],
+  legendary: [
+    {id:"star", name:"Star Bait", luck:45, rareB:0.20},
+    {id:"void", name:"Void Bait", luck:50, rareB:0.22}
+  ]
+};
+
+const PET_POOL = {
+  common: [
+    {id:"fishy", name:"Fishy", mult:1.05, catchB:0.02, luck:1},
+    {id:"bubbles", name:"Bubbles", mult:1.08, catchB:0.03, luck:1}
+  ],
+  uncommon: [
+    {id:"fin", name:"Fin", mult:1.12, catchB:0.04, luck:2},
+    {id:"coral", name:"Coral", mult:1.15, catchB:0.05, luck:2}
+  ],
+  rare: [
+    {id:"aqua", name:"Aqua", mult:1.22, catchB:0.06, luck:4},
+    {id:"pearl", name:"Pearl", mult:1.25, catchB:0.07, luck:4}
+  ],
+  epic: [
+    {id:"levi", name:"Levi", mult:1.35, catchB:0.09, luck:6},
+    {id:"nami", name:"Nami", mult:1.40, catchB:0.10, luck:7}
+  ],
+  legendary: [
+    {id:"poseidon", name:"Poseidon", mult:1.55, catchB:0.12, luck:10},
+    {id:"neptune", name:"Neptune", mult:1.65, catchB:0.15, luck:12}
+  ]
+};
+
+const CHARM_POOL = {
+  common: [
+    {id:"pebble", name:"Lucky Pebble", scoreMult:1.03, luck:2, catchB:0.02, jellyRes:0},
+    {id:"shell", name:"Sea Shell", scoreMult:1.04, luck:3, catchB:0.01, jellyRes:0.05}
+  ],
+  uncommon: [
+    {id:"coralc", name:"Coral Charm", scoreMult:1.08, luck:6, catchB:0.04, jellyRes:0.08},
+    {id:"hookc", name:"Hook Charm", scoreMult:1.06, luck:4, catchB:0.07, jellyRes:0.05}
+  ],
+  rare: [
+    {id:"pearl_c", name:"Pearl Amulet", scoreMult:1.15, luck:12, catchB:0.06, jellyRes:0.12},
+    {id:"tide", name:"Tide Charm", scoreMult:1.12, luck:10, catchB:0.09, jellyRes:0.10}
+  ],
+  epic: [
+    {id:"trident", name:"Mini Trident", scoreMult:1.25, luck:18, catchB:0.10, jellyRes:0.20},
+    {id:"siren", name:"Siren Stone", scoreMult:1.28, luck:20, catchB:0.08, jellyRes:0.25}
+  ],
+  legendary: [
+    {id:"poseidon_c", name:"Poseidon's Seal", scoreMult:1.40, luck:30, catchB:0.15, jellyRes:0.35},
+    {id:"oceanheart", name:"Ocean Heart", scoreMult:1.45, luck:35, catchB:0.12, jellyRes:0.40}
+  ]
+};
+
 const AREAS = {
-    ocean: { name: "Ocean", unlockLevel: 1,
-        fishWeights: { small: .32, medium: .28, large: .18, jelly: .12, rare: .07, shark: .03 } },
-    lake:  { name: "Lake",  unlockLevel: 3,
-        fishWeights: { small: .28, medium: .30, large: .18, jelly: .10, rare: .10, shark: .04 } },
-    deep:  { name: "Deep Sea", unlockLevel: 6,
-        fishWeights: { small: .15, medium: .22, large: .25, jelly: .15, rare: .13, shark: .10 } }
+  ocean: { name:"Ocean", unlockLevel:1, bg:"bgOcean",
+    fishWeights:{ small:.30, medium:.28, large:.18, jelly:.10, rare:.07, shark:.04 } },
+  lake: { name:"Lake", unlockLevel:3, bg:"bgLake",
+    fishWeights:{ small:.28, medium:.30, large:.16, jelly:.08, rare:.09, shark:.04 } },
+  deep: { name:"Deep Sea", unlockLevel:6, bg:"bgDeep",
+    fishWeights:{ small:.15, medium:.22, large:.22, jelly:.12, rare:.12, shark:.08 } },
+  ice: { name:"Ice", unlockLevel:9, bg:"bgIce",
+    fishWeights:{ small:.08, medium:.12, large:.10, jelly:.05, rare:.08, shark:.04,
+      frost:.12, seal:.10, crystal:.08, arctic:.08, glacier:.07, blizzard:.05, yeti:.03 } },
+  volcano: { name:"Volcano", unlockLevel:12, bg:"bgVolcano",
+    fishWeights:{ small:.06, medium:.10, large:.10, jelly:.04, rare:.07, shark:.04,
+      magma:.12, ember:.10, lavashark:.08, phoenix:.08, inferno:.07, molten:.06, firedrake:.04 } },
+  space: { name:"Space", unlockLevel:15, bg:"bgSpace",
+    fishWeights:{ small:.04, medium:.08, large:.08, jelly:.04, rare:.08, shark:.04,
+      alien:.10, nebula:.09, voidjelly:.06, galaxy:.09, quantum:.08, stardust:.07, leviathan:.05 } }
 };
 let currentArea = "ocean";
 
-const RODS = {
-    basic:   { name: "Basic Rod",   price: 0,   drop: 290, retract: 340, range: 150, catchBonus: 1 },
-    good:    { name: "Good Rod",    price: 180, drop: 360, retract: 400, range: 185, catchBonus: 1.12 },
-    pro:     { name: "Pro Rod",     price: 450, drop: 430, retract: 480, range: 225, catchBonus: 1.28 },
-    master:  { name: "Master Rod",  price: 1000,drop: 500, retract: 560, range: 270, catchBonus: 1.5 }
-};
-
-const BAITS = {
-    none:   { name: "No Bait",    price: 0,   luck: 0,  rareBonus: 0 },
-    worm:   { name: "Worm",       price: 60,  luck: 4,  rareBonus: 0.02 },
-    shrimp: { name: "Shrimp",     price: 140, luck: 10, rareBonus: 0.05 },
-    golden: { name: "Golden Bait",price: 350, luck: 20, rareBonus: 0.10 }
-};
-
 const FISH_TYPES = {
-    small:  { name: "Small Fish",  points: 10,  xp: 8,  speedMin: 140, speedMax: 200, width: 48, height: 28, color: "#ffd92f", accent: "#ff9e22" },
-    medium: { name: "Medium Fish", points: 20,  xp: 15, speedMin: 95,  speedMax: 140, width: 65, height: 38, color: "#55c7ff", accent: "#1678c1" },
-    large:  { name: "Large Fish",  points: 50,  xp: 30, speedMin: 55,  speedMax: 85,  width: 90, height: 50, color: "#ff635f", accent: "#bb2f3b" },
-    jelly:  { name: "Jellyfish",   points: -30, xp: 5,  speedMin: 60,  speedMax: 95,  width: 55, height: 60, color: "#d984ff", accent: "#8e45ca" },
-    rare:   { name: "Rare Fish",   points: 130, xp: 65, speedMin: 110, speedMax: 160, width: 70, height: 40, color: "#a0ff70", accent: "#3aaa20" },
-    shark:  { name: "Shark",       points: 220, xp: 110,speedMin: 70,  speedMax: 105, width: 110,height: 48, color: "#8a9bb0", accent: "#4a5a6a" }
+  small:  { name:"Small Fish", points:10, xp:8, speedMin:140, speedMax:200, width:48, height:28, color:"#ffd92f", accent:"#ff9e22" },
+  medium: { name:"Medium Fish", points:20, xp:15, speedMin:95, speedMax:140, width:65, height:38, color:"#55c7ff", accent:"#1678c1" },
+  large:  { name:"Large Fish", points:50, xp:30, speedMin:55, speedMax:85, width:90, height:50, color:"#ff635f", accent:"#bb2f3b" },
+  jelly:  { name:"Jellyfish", points:-30, xp:5, speedMin:60, speedMax:95, width:55, height:60, color:"#d984ff", accent:"#8e45ca" },
+  rare:   { name:"Rare Fish", points:130, xp:65, speedMin:110, speedMax:160, width:70, height:40, color:"#a0ff70", accent:"#3aaa20" },
+  shark:  { name:"Shark", points:220, xp:110, speedMin:70, speedMax:105, width:110, height:48, color:"#8a9bb0", accent:"#4a5a6a" },
+  frost:  { name:"Frost Fish", points:90, xp:45, speedMin:100, speedMax:145, width:58, height:34, color:"#a0e8ff", accent:"#40a0c8" },
+  seal:   { name:"Seal", points:160, xp:75, speedMin:50, speedMax:80, width:85, height:45, color:"#c0d0e0", accent:"#607080" },
+  crystal:{ name:"Crystal Jelly", points:-45, xp:12, speedMin:70, speedMax:100, width:58, height:62, color:"#d0f0ff", accent:"#80c0e0" },
+  arctic: { name:"Arctic King", points:320, xp:140, speedMin:45, speedMax:75, width:100, height:52, color:"#e0f8ff", accent:"#60b0d0" },
+  glacier:{ name:"Glacier Ray", points:280, xp:120, speedMin:60, speedMax:95, width:95, height:40, color:"#b0e0ff", accent:"#3080b0" },
+  blizzard:{ name:"Blizzard", points:350, xp:150, speedMin:90, speedMax:130, width:75, height:38, color:"#f0ffff", accent:"#80c0e0" },
+  yeti:   { name:"Yeti Fish", points:420, xp:180, speedMin:40, speedMax:70, width:105, height:55, color:"#e8f0f8", accent:"#8090a0" },
+  magma:  { name:"Magma Fish", points:100, xp:50, speedMin:90, speedMax:135, width:60, height:36, color:"#ff6030", accent:"#c03010" },
+  ember:  { name:"Ember Eel", points:170, xp:80, speedMin:110, speedMax:155, width:95, height:28, color:"#ff9020", accent:"#d05010" },
+  lavashark:{ name:"Lava Shark", points:300, xp:135, speedMin:60, speedMax:95, width:115, height:50, color:"#e04020", accent:"#801010" },
+  phoenix:{ name:"Phoenix Fish", points:380, xp:160, speedMin:85, speedMax:125, width:80, height:42, color:"#ff8040", accent:"#e04010" },
+  inferno:{ name:"Inferno", points:340, xp:145, speedMin:70, speedMax:110, width:90, height:45, color:"#ff5020", accent:"#b02000" },
+  molten: { name:"Molten King", points:450, xp:190, speedMin:50, speedMax:85, width:110, height:55, color:"#ff4010", accent:"#a01000" },
+  firedrake:{ name:"Fire Drake", points:500, xp:210, speedMin:55, speedMax:90, width:120, height:50, color:"#ff3000", accent:"#800000" },
+  alien:  { name:"Alien Fish", points:140, xp:65, speedMin:100, speedMax:150, width:68, height:40, color:"#80ff80", accent:"#20a020" },
+  nebula: { name:"Nebula Ray", points:220, xp:100, speedMin:70, speedMax:110, width:100, height:42, color:"#c080ff", accent:"#6020a0" },
+  voidjelly:{ name:"Void Jelly", points:-55, xp:15, speedMin:55, speedMax:90, width:60, height:65, color:"#401080", accent:"#200050" },
+  galaxy: { name:"Galaxy Whale", points:480, xp:200, speedMin:40, speedMax:70, width:125, height:55, color:"#6080ff", accent:"#2030a0" },
+  quantum:{ name:"Quantum", points:400, xp:170, speedMin:95, speedMax:140, width:78, height:40, color:"#00ffc0", accent:"#00a080" },
+  stardust:{ name:"Stardust", points:360, xp:155, speedMin:80, speedMax:120, width:85, height:38, color:"#ffe080", accent:"#c0a020" },
+  leviathan:{ name:"Cosmic Leviathan", points:600, xp:250, speedMin:35, speedMax:65, width:130, height:58, color:"#a060ff", accent:"#4010a0" }
 };
 
 function random(min, max) { return Math.random() * (max - min) + min; }
 function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
 function svgEl(tag, attrs = {}) {
-    const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
-    for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
-    return el;
+  const el = document.createElementNS("http://www.w3.org/2000/svg", tag);
+  for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+  return el;
 }
 
-function getRod() { return RODS[equippedRod]; }
-function getBait() { return BAITS[equippedBait]; }
-function getCastSpeed() { return getRod().drop * (1 + upgrades.castSpeed * 0.08); }
-function getRetractSpeed() { return getRod().retract * (1 + upgrades.castSpeed * 0.08); }
-function getSwingRange() { return getRod().range + upgrades.swingRange * 25; }
-function getLuck() { return upgrades.luck * 4 + getBait().luck; }
+function getRodStats() {
+  const pool = ROD_POOL[equippedRod.rarity] || ROD_POOL.common;
+  return pool.find(r => r.id === equippedRod.id) || pool[0];
+}
+function getBaitStats() {
+  const pool = BAIT_POOL[equippedBait.rarity] || BAIT_POOL.common;
+  return pool.find(b => b.id === equippedBait.id) || pool[0];
+}
+function getPetStats() {
+  if (!equippedPet) return { mult:1, catchB:0, luck:0 };
+  const pool = PET_POOL[equippedPet.rarity] || PET_POOL.common;
+  const p = pool.find(x => x.id === equippedPet.id);
+  return p || { mult:1, catchB:0, luck:0 };
+}
+function getPetMult() {
+  return getPetStats().mult;
+}
+function getCharmStats() {
+  if (!equippedCharm) return { scoreMult:1, luck:0, catchB:0, jellyRes:0 };
+  const pool = CHARM_POOL[equippedCharm.rarity] || CHARM_POOL.common;
+  return pool.find(c => c.id === equippedCharm.id) || { scoreMult:1, luck:0, catchB:0, jellyRes:0 };
+}
+function getCastSpeed() { return getRodStats().drop * (1 + upgrades.castSpeed * 0.08); }
+function getRetractSpeed() { return getRodStats().retract * (1 + upgrades.castSpeed * 0.08); }
+function getSwingRange() { return getRodStats().range + upgrades.swingRange * 25; }
+function getLuck() {
+  return upgrades.luck * 4 + getBaitStats().luck + getCharmStats().luck + getPetStats().luck;
+}
+
+function rollRarity() {
+  const r = Math.random() * 100;
+  let acc = 0;
+  for (const [rar, w] of Object.entries(RARITY_WEIGHTS)) {
+    acc += w;
+    if (r <= acc) return rar;
+  }
+  return "common";
+}
+
+function alreadyOwned(list, id, rarity) {
+  return list.some(item => item.id === id && item.rarity === rarity);
+}
+
+function doGacha(type) {
+  const cost = GACHA_COST[type];
+  if (score < cost) {
+    document.getElementById("gachaResult").innerHTML = `<span style="color:#ff8a8a">เหรียญไม่พอ! (ต้องการ ${cost})</span>`;
+    return;
+  }
+  score -= cost;
+  updateScore();
+  document.getElementById("shopCoins").textContent = score;
+
+  const rarity = rollRarity();
+  let item, pool, ownedList;
+
+  if (type === "rod") {
+    pool = ROD_POOL[rarity];
+    item = pool[Math.floor(Math.random() * pool.length)];
+    ownedList = ownedRods;
+  } else if (type === "bait") {
+    pool = BAIT_POOL[rarity];
+    item = pool[Math.floor(Math.random() * pool.length)];
+    ownedList = ownedBaits;
+  } else if (type === "pet") {
+    pool = PET_POOL[rarity];
+    item = pool[Math.floor(Math.random() * pool.length)];
+    ownedList = ownedPets;
+  } else {
+    pool = CHARM_POOL[rarity];
+    item = pool[Math.floor(Math.random() * pool.length)];
+    ownedList = ownedCharms;
+  }
+
+  if (alreadyOwned(ownedList, item.id, rarity)) {
+    document.getElementById("gachaResult").innerHTML =
+      `<span style="color:#ffb74d">Duplicate!</span><br>
+       <span class="${RARITY_CLS[rarity]}">${item.name}</span>`;
+    return;
+  }
+
+  ownedList.push({ id: item.id, rarity: rarity });
+  document.getElementById("gachaResult").innerHTML =
+    `<span class="${RARITY_CLS[rarity]}">${rarity.toUpperCase()}</span><br>${item.name}`;
+}
 
 function spawnCatchEffect(svgX, svgY, type, points) {
-    const rect = game.getBoundingClientRect();
-    const scaleX = rect.width / WIDTH;
-    const scaleY = rect.height / HEIGHT;
-    const px = svgX * scaleX;
-    const py = svgY * scaleY;
+  const rect = game.getBoundingClientRect();
+  const scaleX = rect.width / WIDTH;
+  const scaleY = rect.height / HEIGHT;
+  const px = svgX * scaleX;
+  const py = svgY * scaleY;
 
-    const ripple = document.createElement("div");
-    ripple.className = "ripple";
-    ripple.style.left = px + "px";
-    ripple.style.top  = py + "px";
-    game.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 650);
+  const ripple = document.createElement("div");
+  ripple.className = "ripple";
+  ripple.style.left = px + "px";
+  ripple.style.top = py + "px";
+  game.appendChild(ripple);
+  setTimeout(() => ripple.remove(), 650);
 
-    if (["rare", "shark", "large"].includes(type) || points >= 50) {
-        const flash = document.createElement("div");
-        flash.className = "flash";
-        flash.style.setProperty("--fx", (px / rect.width * 100) + "%");
-        flash.style.setProperty("--fy", (py / rect.height * 100) + "%");
-        game.appendChild(flash);
-        setTimeout(() => flash.remove(), 400);
+  if (["rare","shark","large","arctic","yeti","phoenix","molten","firedrake","galaxy","leviathan"].includes(type) || points >= 80) {
+    const flash = document.createElement("div");
+    flash.className = "flash";
+    flash.style.setProperty("--fx", (px / rect.width * 100) + "%");
+    flash.style.setProperty("--fy", (py / rect.height * 100) + "%");
+    game.appendChild(flash);
+    setTimeout(() => flash.remove(), 400);
+  }
+
+  const colorMap = {
+    small:["#ffd92f","#fff"], medium:["#55c7ff","#fff"], large:["#ff635f","#ffd0a0"],
+    jelly:["#d984ff","#ff6b9d"], rare:["#a0ff70","#ffe36e"], shark:["#8a9bb0","#fff"],
+    frost:["#a0e8ff","#fff"], seal:["#c0d0e0","#fff"], crystal:["#d0f0ff","#a0d0ff"],
+    arctic:["#e0f8ff","#fff"], glacier:["#b0e0ff","#fff"], blizzard:["#f0ffff","#fff"], yeti:["#e8f0f8","#fff"],
+    magma:["#ff6030","#ffd0a0"], ember:["#ff9020","#ffe0a0"], lavashark:["#e04020","#ff8060"],
+    phoenix:["#ff8040","#fff"], inferno:["#ff5020","#fff"], molten:["#ff4010","#fff"], firedrake:["#ff3000","#fff"],
+    alien:["#80ff80","#d0ffd0"], nebula:["#c080ff","#e0c0ff"], voidjelly:["#401080","#8060c0"],
+    galaxy:["#6080ff","#fff"], quantum:["#00ffc0","#fff"], stardust:["#ffe080","#fff"], leviathan:["#a060ff","#fff"]
+  };
+  const colors = colorMap[type] || ["#fff"];
+  const count = type.includes("shark") || type === "leviathan" || type === "galaxy" ? 16 : 10;
+
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement("div");
+    p.className = "particle";
+    const size = random(4, 10);
+    p.style.width = size + "px";
+    p.style.height = size + "px";
+    p.style.background = colors[i % colors.length];
+    p.style.left = px + "px";
+    p.style.top = py + "px";
+    const angle = (Math.PI * 2 * i) / count + random(-0.3, 0.3);
+    const dist = random(30, 80);
+    p.style.setProperty("--dx", Math.cos(angle) * dist + "px");
+    p.style.setProperty("--dy", Math.sin(angle) * dist + "px");
+    game.appendChild(p);
+    setTimeout(() => p.remove(), 750);
+  }
+
+  if (["rare","shark","arctic","yeti","phoenix","firedrake","galaxy","leviathan"].includes(type)) {
+    const stars = ["★","✦","✧"];
+    for (let i = 0; i < 5; i++) {
+      const s = document.createElement("div");
+      s.className = "star-particle";
+      s.textContent = stars[i % stars.length];
+      s.style.color = colors[i % colors.length];
+      s.style.left = px + "px";
+      s.style.top = py + "px";
+      const angle = random(0, Math.PI * 2);
+      const dist = random(40, 80);
+      s.style.setProperty("--dx", Math.cos(angle) * dist + "px");
+      s.style.setProperty("--dy", Math.sin(angle) * dist - 20 + "px");
+      game.appendChild(s);
+      setTimeout(() => s.remove(), 850);
     }
+  }
 
-    const colorMap = {
-        small:  ["#ffd92f", "#ffe98a", "#fff"],
-        medium: ["#55c7ff", "#a0e4ff", "#fff"],
-        large:  ["#ff635f", "#ff9a90", "#ffd0a0"],
-        jelly:  ["#d984ff", "#ff6b9d", "#c44dff"],
-        rare:   ["#a0ff70", "#ffe36e", "#ffffff", "#7dffb0"],
-        shark:  ["#8a9bb0", "#c0d0e8", "#ffffff", "#ff8a70"]
-    };
-    const colors = colorMap[type] || ["#fff"];
-    const count = type === "shark" ? 18 : type === "rare" ? 14 : type === "jelly" ? 10 : 8;
-
-    for (let i = 0; i < count; i++) {
-        const p = document.createElement("div");
-        p.className = "particle";
-        const size = random(4, type === "shark" ? 12 : 9);
-        p.style.width = size + "px";
-        p.style.height = size + "px";
-        p.style.background = colors[i % colors.length];
-        p.style.left = px + "px";
-        p.style.top  = py + "px";
-        const angle = (Math.PI * 2 * i) / count + random(-0.3, 0.3);
-        const dist = random(30, type === "shark" ? 90 : 70);
-        p.style.setProperty("--dx", Math.cos(angle) * dist + "px");
-        p.style.setProperty("--dy", Math.sin(angle) * dist + "px");
-        game.appendChild(p);
-        setTimeout(() => p.remove(), 750);
-    }
-
-    if (type === "rare" || type === "shark") {
-        const stars = type === "shark" ? ["★","✦","✧"] : ["★","☆","✦"];
-        for (let i = 0; i < 5; i++) {
-            const s = document.createElement("div");
-            s.className = "star-particle";
-            s.textContent = stars[i % stars.length];
-            s.style.color = colors[i % colors.length];
-            s.style.left = px + "px";
-            s.style.top  = py + "px";
-            const angle = random(0, Math.PI * 2);
-            const dist = random(40, 80);
-            s.style.setProperty("--dx", Math.cos(angle) * dist + "px");
-            s.style.setProperty("--dy", Math.sin(angle) * dist - 20 + "px");
-            game.appendChild(s);
-            setTimeout(() => s.remove(), 850);
-        }
-    }
-
-    scoreBox.classList.remove("pulse");
-    void scoreBox.offsetWidth;
-    scoreBox.classList.add("pulse");
+  scoreBox.classList.remove("pulse");
+  void scoreBox.offsetWidth;
+  scoreBox.classList.add("pulse");
 }
 
 function createFishGraphic(type, direction) {
-    const data = FISH_TYPES[type];
-    const group = svgEl("g");
-    group.setAttribute("filter", "url(#fishShadow)");
+  const data = FISH_TYPES[type];
+  if (!data) return svgEl("g");
+  const group = svgEl("g");
+  group.setAttribute("filter", "url(#fishShadow)");
 
-    if (type === "jelly") {
-        group.appendChild(svgEl("path", {
-            d: "M8 32 Q8 8 27 7 Q47 8 47 32 Q40 28 34 36 Q27 28 20 36 Q14 28 8 32 Z",
-            fill: data.color, stroke: data.accent, "stroke-width": 3, class: "jelly-body"
-        }));
-        group.appendChild(svgEl("path", {
-            d: "M13 32 Q10 46 16 55 M22 34 Q18 50 24 59 M31 34 Q28 49 34 58 M40 33 Q38 47 45 54",
-            fill: "none", stroke: data.color, "stroke-width": 6, "stroke-linecap": "round"
-        }));
-        group.appendChild(svgEl("circle", { cx: 21, cy: 21, r: 3, fill: "#222" }));
-        group.appendChild(svgEl("circle", { cx: 35, cy: 21, r: 3, fill: "#222" }));
-        group.appendChild(svgEl("path", { d: "M25 27 Q28 30 31 27", fill: "none", stroke: "#63316d", "stroke-width": 2, "stroke-linecap": "round" }));
-        return group;
-    }
-
-    if (type === "shark") {
-        group.appendChild(svgEl("ellipse", { cx: data.width * .5, cy: data.height * .55, rx: data.width * .42, ry: data.height * .32, fill: data.color, stroke: data.accent, "stroke-width": 3, class: "fish-body" }));
-        group.appendChild(svgEl("path", { d: `M${data.width*.15} ${data.height*.55} L2 ${data.height*.15} L8 ${data.height*.55} L2 ${data.height*.9} Z`, fill: data.accent }));
-        group.appendChild(svgEl("path", { d: `M${data.width*.55} ${data.height*.25} L${data.width*.7} 2 L${data.width*.75} ${data.height*.3} Z`, fill: data.accent }));
-        group.appendChild(svgEl("circle", { cx: data.width * .78, cy: data.height * .42, r: 5, fill: "white" }));
-        group.appendChild(svgEl("circle", { cx: data.width * .79, cy: data.height * .42, r: 2.5, fill: "#111" }));
-        group.appendChild(svgEl("path", { d: `M${data.width*.85} ${data.height*.55} L${data.width*.95} ${data.height*.48} L${data.width*.95} ${data.height*.62} Z`, fill: "#333" }));
-        return group;
-    }
-
-    group.appendChild(svgEl("ellipse", {
-        cx: data.width * .48, cy: data.height * .52, rx: data.width * .35, ry: data.height * .38,
-        fill: data.color, stroke: data.accent, "stroke-width": 3, class: "fish-body"
+  if (["jelly","crystal","voidjelly"].includes(type)) {
+    group.appendChild(svgEl("path", {
+      d: "M8 32 Q8 8 27 7 Q47 8 47 32 Q40 28 34 36 Q27 28 20 36 Q14 28 8 32 Z",
+      fill: data.color, stroke: data.accent, "stroke-width": 3, class: "jelly-body"
     }));
     group.appendChild(svgEl("path", {
-        d: `M${data.width*.22} ${data.height*.52} L3 ${data.height*.20} L3 ${data.height*.82} Z`,
-        fill: data.accent, stroke: data.accent, "stroke-width": 2
+      d: "M13 32 Q10 46 16 55 M22 34 Q18 50 24 59 M31 34 Q28 49 34 58 M40 33 Q38 47 45 54",
+      fill: "none", stroke: data.color, "stroke-width": 6, "stroke-linecap": "round"
     }));
-    group.appendChild(svgEl("path", {
-        d: `M${data.width*.50} ${data.height*.18} Q${data.width*.60} ${-data.height*.02} ${data.width*.70} ${data.height*.20} Z`,
-        fill: data.accent, opacity: ".85"
-    }));
-    group.appendChild(svgEl("circle", { cx: data.width * .68, cy: data.height * .40, r: Math.max(3, data.height * .11), fill: "white" }));
-    group.appendChild(svgEl("circle", { cx: data.width * .69, cy: data.height * .40, r: Math.max(1.5, data.height * .055), fill: "#162b3b" }));
-    group.appendChild(svgEl("path", {
-        d: `M${data.width*.75} ${data.height*.56} Q${data.width*.82} ${data.height*.62} ${data.width*.75} ${data.height*.67}`,
-        fill: "none", stroke: data.accent, "stroke-width": 2, "stroke-linecap": "round"
-    }));
-    if (type === "rare") {
-        group.appendChild(svgEl("circle", { cx: data.width * .45, cy: data.height * .45, r: 4, fill: "#fff", opacity: ".6" }));
-    }
+    group.appendChild(svgEl("circle", { cx:21, cy:21, r:3, fill:"#222" }));
+    group.appendChild(svgEl("circle", { cx:35, cy:21, r:3, fill:"#222" }));
     return group;
+  }
+
+  if (["shark","lavashark","firedrake","leviathan","galaxy","yeti","molten"].includes(type)) {
+    group.appendChild(svgEl("ellipse", {
+      cx: data.width*.5, cy: data.height*.55, rx: data.width*.42, ry: data.height*.32,
+      fill: data.color, stroke: data.accent, "stroke-width": 3, class: "fish-body"
+    }));
+    group.appendChild(svgEl("path", {
+      d: `M${data.width*.15} ${data.height*.55} L2 ${data.height*.15} L8 ${data.height*.55} L2 ${data.height*.9} Z`,
+      fill: data.accent
+    }));
+    group.appendChild(svgEl("circle", { cx: data.width*.78, cy: data.height*.42, r:5, fill:"white" }));
+    group.appendChild(svgEl("circle", { cx: data.width*.79, cy: data.height*.42, r:2.5, fill:"#111" }));
+    return group;
+  }
+
+  if (type === "seal") {
+    group.appendChild(svgEl("ellipse", {
+      cx: data.width*.5, cy: data.height*.55, rx: data.width*.4, ry: data.height*.35,
+      fill: data.color, stroke: data.accent, "stroke-width": 3, class: "fish-body"
+    }));
+    group.appendChild(svgEl("circle", {
+      cx: data.width*.75, cy: data.height*.4, r: data.height*.22,
+      fill: data.color, stroke: data.accent, "stroke-width": 2
+    }));
+    group.appendChild(svgEl("circle", { cx: data.width*.82, cy: data.height*.38, r:3, fill:"#222" }));
+    return group;
+  }
+
+  group.appendChild(svgEl("ellipse", {
+    cx: data.width*.48, cy: data.height*.52, rx: data.width*.35, ry: data.height*.38,
+    fill: data.color, stroke: data.accent, "stroke-width": 3, class: "fish-body"
+  }));
+  group.appendChild(svgEl("path", {
+    d: `M${data.width*.22} ${data.height*.52} L3 ${data.height*.20} L3 ${data.height*.82} Z`,
+    fill: data.accent, stroke: data.accent, "stroke-width": 2
+  }));
+  group.appendChild(svgEl("path", {
+    d: `M${data.width*.50} ${data.height*.18} Q${data.width*.60} ${-data.height*.02} ${data.width*.70} ${data.height*.20} Z`,
+    fill: data.accent, opacity: ".85"
+  }));
+  group.appendChild(svgEl("circle", {
+    cx: data.width*.68, cy: data.height*.40, r: Math.max(3, data.height*.11), fill: "white"
+  }));
+  group.appendChild(svgEl("circle", {
+    cx: data.width*.69, cy: data.height*.40, r: Math.max(1.5, data.height*.055), fill: "#162b3b"
+  }));
+  if (["rare","alien","quantum","stardust"].includes(type)) {
+    group.appendChild(svgEl("circle", { cx: data.width*.45, cy: data.height*.45, r:4, fill:"#fff", opacity:".6" }));
+  }
+  return group;
 }
 
 function updateFishGraphic(fish) {
-    if (!fish.element) return;
-    let t = `translate(${fish.x},${fish.y})`;
-    if (fish.direction < 0) t += ` scale(-1,1) translate(${-fish.width},0)`;
-    fish.element.setAttribute("transform", t);
+  if (!fish.element) return;
+  let t = `translate(${fish.x},${fish.y})`;
+  if (fish.direction < 0) t += ` scale(-1,1) translate(${-fish.width},0)`;
+  fish.element.setAttribute("transform", t);
 }
 
 function pickFishType() {
-    const weights = { ...AREAS[currentArea].fishWeights };
-    const luckFactor = getLuck() / 100 + getBait().rareBonus;
-    weights.rare  = (weights.rare  || 0) + luckFactor;
-    weights.shark = (weights.shark || 0) + luckFactor * 0.5;
-    weights.jelly = Math.max(0.04, (weights.jelly || 0.12) - luckFactor * 0.25);
+  const weights = { ...AREAS[currentArea].fishWeights };
+  const luckFactor = getLuck() / 100 + getBaitStats().rareB;
+  weights.rare = (weights.rare || 0) + luckFactor;
+  weights.shark = (weights.shark || 0) + luckFactor * 0.5;
+  weights.jelly = Math.max(0.03, (weights.jelly || 0.10) - luckFactor * 0.25);
 
-    let total = 0;
-    for (const k in weights) total += weights[k];
-    let r = Math.random() * total;
-    for (const k in weights) {
-        r -= weights[k];
-        if (r <= 0) return k;
-    }
-    return "small";
+  let total = 0;
+  for (const k in weights) total += weights[k];
+  let r = Math.random() * total;
+  for (const k in weights) {
+    r -= weights[k];
+    if (r <= 0) return k;
+  }
+  return "small";
 }
 
 function spawnFish() {
-    const type = pickFishType();
-    const data = FISH_TYPES[type];
-    const direction = Math.random() < 0.5 ? 1 : -1;
-    // ปลาเกิดได้ลึกขึ้น
-    const y = random(310, 560);
-    const x = direction === 1 ? -data.width - 10 : WIDTH + 10;
-    const speed = random(data.speedMin, data.speedMax);
+  const type = pickFishType();
+  const data = FISH_TYPES[type];
+  if (!data) return;
+  const direction = Math.random() < 0.5 ? 1 : -1;
+  const y = random(310, 560);
+  const x = direction === 1 ? -data.width - 10 : WIDTH + 10;
+  const speed = random(data.speedMin, data.speedMax);
 
-    const fish = {
-        id: Math.random(), type, x, y, speed, direction,
-        width: data.width, height: data.height, element: null, caught: false
-    };
-    fish.element = createFishGraphic(type, direction);
-    fishLayer.appendChild(fish.element);
-    fishes.push(fish);
-    updateFishGraphic(fish);
+  const fish = {
+    id: Math.random(), type, x, y, speed, direction,
+    width: data.width, height: data.height, element: null, caught: false
+  };
+  fish.element = createFishGraphic(type, direction);
+  fishLayer.appendChild(fish.element);
+  fishes.push(fish);
+  updateFishGraphic(fish);
 }
 
 function removeFish(fish) {
-    if (fish.element && fish.element.parentNode) fish.element.parentNode.removeChild(fish.element);
-    fishes = fishes.filter(f => f !== fish);
+  if (fish.element && fish.element.parentNode) fish.element.parentNode.removeChild(fish.element);
+  fishes = fishes.filter(f => f !== fish);
 }
 
 function updateFishes(dt) {
-    for (const fish of [...fishes]) {
-        if (fish.caught) continue;
-        fish.x += fish.speed * fish.direction * dt;
-        updateFishGraphic(fish);
-        if ((fish.direction === 1 && fish.x > WIDTH + fish.width + 20) ||
-            (fish.direction === -1 && fish.x < -fish.width - 20)) {
-            removeFish(fish);
-        }
+  for (const fish of [...fishes]) {
+    if (fish.caught) continue;
+    fish.x += fish.speed * fish.direction * dt;
+    updateFishGraphic(fish);
+    if ((fish.direction === 1 && fish.x > WIDTH + fish.width + 20) ||
+        (fish.direction === -1 && fish.x < -fish.width - 20)) {
+      removeFish(fish);
     }
+  }
 }
 
 function getHookRect() {
-    return { left: hookX - 8, right: hookX + 10, top: hookY - 4, bottom: hookY + 28 };
+  return { left: hookX - 8, right: hookX + 10, top: hookY - 4, bottom: hookY + 28 };
 }
 function getFishRect(fish) {
-    return { left: fish.x + 4, right: fish.x + fish.width - 4, top: fish.y + 4, bottom: fish.y + fish.height - 4 };
+  return { left: fish.x + 4, right: fish.x + fish.width - 4, top: fish.y + 4, bottom: fish.y + fish.height - 4 };
 }
 function intersects(a, b) {
-    return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+  return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
 }
 
 function checkFishCollisions() {
-    if (hookState !== "dropping" && hookState !== "retracting") return;
-    if (caughtFish) return;
-    const hr = getHookRect();
-    for (const fish of fishes) {
-        if (fish.caught) continue;
-        if (intersects(hr, getFishRect(fish))) {
-            const chance = Math.min(0.92, 0.68 + getRod().catchBonus * 0.09 + getLuck() / 220);
-            if (Math.random() < chance || fish.type === "jelly") {
-                catchFish(fish);
-            }
-            break;
-        }
+  if (hookState !== "dropping" && hookState !== "retracting") return;
+  if (caughtFish) return;
+  const hr = getHookRect();
+  const charm = getCharmStats();
+  const pet = getPetStats();
+
+  for (const fish of fishes) {
+    if (fish.caught) continue;
+    if (intersects(hr, getFishRect(fish))) {
+      // เครื่องรางกันเจลลี่
+      if (["jelly","crystal","voidjelly"].includes(fish.type) && Math.random() < charm.jellyRes) {
+        continue;
+      }
+      // รวมโบนัสจับจากเบ็ด + โชค + เครื่องราง + สัตว์เลี้ยง
+      const chance = Math.min(0.95,
+        0.62 + getRodStats().bonus * 0.10 + getLuck() / 200 + charm.catchB + pet.catchB
+      );
+      if (Math.random() < chance || ["jelly","crystal","voidjelly"].includes(fish.type)) {
+        catchFish(fish);
+      }
+      break;
     }
+  }
 }
 
 function catchFish(fish) {
-    fish.caught = true;
-    caughtFish = fish;
-    fish.speed = 0;
-    const data = FISH_TYPES[fish.type];
-    const pts = Math.round(data.points * getRod().catchBonus);
-    score += pts;
-    addXP(data.xp);
-    updateScore();
+  fish.caught = true;
+  caughtFish = fish;
+  fish.speed = 0;
+  const data = FISH_TYPES[fish.type];
+  const charm = getCharmStats();
+  let pts = Math.round(data.points * getRodStats().bonus * getPetMult() * charm.scoreMult);
+  if (pts < 0 && charm.jellyRes > 0) {
+    pts = Math.round(pts * (1 - charm.jellyRes));
+  }
+  score += pts;
+  addXP(data.xp);
+  updateScore();
 
-    const cx = fish.x + fish.width / 2;
-    const cy = fish.y + fish.height / 2;
-    spawnCatchEffect(cx, cy, fish.type, pts);
-    showCatchText(cx, cy, pts, fish.type);
+  const cx = fish.x + fish.width / 2;
+  const cy = fish.y + fish.height / 2;
+  spawnCatchEffect(cx, cy, fish.type, pts);
+  showCatchText(cx, cy, pts, fish.type);
 }
 
 function showCatchText(x, y, points, type) {
-    const text = document.createElement("div");
-    text.className = "catch-text";
+  const text = document.createElement("div");
+  text.className = "catch-text";
 
-    if (points < 0) {
-        text.classList.add("neg");
-        text.textContent = `${points}`;
-    } else if (type === "shark") {
-        text.classList.add("shark");
-        text.textContent = `+${points} 🦈`;
-    } else if (type === "rare") {
-        text.classList.add("rare");
-        text.textContent = `+${points} ★`;
-    } else if (points >= 50) {
-        text.classList.add("big", "pos");
-        text.textContent = `+${points}`;
-    } else {
-        text.classList.add("normal", "pos");
-        text.textContent = `+${points}`;
-    }
+  if (points < 0) {
+    text.classList.add("neg");
+    text.textContent = `${points}`;
+  } else if (points >= 300 || ["shark","lavashark","firedrake","leviathan","galaxy","yeti"].includes(type)) {
+    text.classList.add("shark");
+    text.textContent = `+${points} ★`;
+  } else if (points >= 100 || type === "rare") {
+    text.classList.add("rare");
+    text.textContent = `+${points}`;
+  } else {
+    text.classList.add("normal", "pos");
+    text.textContent = `+${points}`;
+  }
 
-    const rect = game.getBoundingClientRect();
-    text.style.left = `${x * (rect.width / WIDTH)}px`;
-    text.style.top  = `${y * (rect.height / HEIGHT)}px`;
-    game.appendChild(text);
-    setTimeout(() => text.remove(), 950);
+  const rect = game.getBoundingClientRect();
+  text.style.left = `${x * (rect.width / WIDTH)}px`;
+  text.style.top = `${y * (rect.height / HEIGHT)}px`;
+  game.appendChild(text);
+  setTimeout(() => text.remove(), 950);
 }
 
 function addXP(amount) {
-    xp += amount;
-    while (xp >= xpToNext) {
-        xp -= xpToNext;
-        level++;
-        xpToNext = Math.floor(100 * Math.pow(1.38, level - 1));
-        const t = document.createElement("div");
-        t.className = "catch-text big pos";
-        t.textContent = `LEVEL ${level}!`;
-        const rect = game.getBoundingClientRect();
-        t.style.left = `${boatX * (rect.width / WIDTH)}px`;
-        t.style.top  = `${200 * (rect.height / HEIGHT)}px`;
-        game.appendChild(t);
-        setTimeout(() => t.remove(), 1200);
-    }
-    updateXPUI();
+  xp += amount;
+  while (xp >= xpToNext) {
+    xp -= xpToNext;
+    level++;
+    xpToNext = Math.floor(100 * Math.pow(1.38, level - 1));
+    const t = document.createElement("div");
+    t.className = "catch-text big pos";
+    t.textContent = `LEVEL ${level}!`;
+    const rect = game.getBoundingClientRect();
+    t.style.left = `${boatX * (rect.width / WIDTH)}px`;
+    t.style.top = `${200 * (rect.height / HEIGHT)}px`;
+    game.appendChild(t);
+    setTimeout(() => t.remove(), 1200);
+  }
+  updateXPUI();
 }
 
 function updateXPUI() {
-    levelEl.textContent = level;
-    const pct = Math.min(100, (xp / xpToNext) * 100);
-    xpBar.style.width = pct + "%";
-    xpText.textContent = `${xp} / ${xpToNext}`;
+  levelEl.textContent = level;
+  const pct = Math.min(100, (xp / xpToNext) * 100);
+  xpBar.style.width = pct + "%";
+  xpText.textContent = `${xp} / ${xpToNext}`;
 }
 
 function updateScore() { scoreEl.textContent = score; }
 
+function updatePetCharmUI() {
+  petNameEl.textContent = equippedPet ? equippedPet.id : "None";
+  charmNameEl.textContent = equippedCharm ? equippedCharm.id : "None";
+}
+
 function updateHookGraphic() {
-    fishingLine.setAttribute("x1", hookX);
-    fishingLine.setAttribute("y1", LINE_TOP_Y);
-    fishingLine.setAttribute("x2", hookX);
-    fishingLine.setAttribute("y2", hookY);
+  fishingLine.setAttribute("x1", hookX);
+  fishingLine.setAttribute("y1", LINE_TOP_Y);
+  fishingLine.setAttribute("x2", hookX);
+  fishingLine.setAttribute("y2", hookY);
+  hook.setAttribute("transform", `translate(${hookX - 400}, ${hookY - HOOK_START_Y})`);
+  boat.setAttribute("transform", `translate(${boatX - 400}, 0)`);
 
-    // เบ็ดเลื่อนตาม
-    hook.setAttribute("transform", `translate(${hookX - 400}, ${hookY - HOOK_START_Y})`);
-
-    // เรือเลื่อนแนวนอนอย่างเดียว (Y ติดน้ำแล้ว)
-    boat.setAttribute("transform", `translate(${boatX - 400}, 0)`);
-
-    if (caughtFish) {
-        caughtFish.x = hookX - caughtFish.width / 2;
-        caughtFish.y = hookY + 15;
-        updateFishGraphic(caughtFish);
-    }
+  if (caughtFish) {
+    caughtFish.x = hookX - caughtFish.width / 2;
+    caughtFish.y = hookY + 15;
+    updateFishGraphic(caughtFish);
+  }
 }
 
 function castHook() {
-    if (!gameRunning || paused) return;
-    if (hookState !== "swinging") return;
-    hookState = "dropping";
+  if (!gameRunning || paused) return;
+  if (hookState !== "swinging") return;
+  hookState = "dropping";
 }
 
 function updateHook(dt) {
-    const range = getSwingRange();
-    const leftLimit  = boatX - range / 2;
-    const rightLimit = boatX + range / 2;
+  const range = getSwingRange();
+  const leftLimit = boatX - range / 2;
+  const rightLimit = boatX + range / 2;
 
-    if (hookState === "swinging") {
-        hookX += hookDirection * 145 * dt;
-        if (hookX >= rightLimit) { hookX = rightLimit; hookDirection = -1; }
-        if (hookX <= leftLimit)  { hookX = leftLimit;  hookDirection = 1; }
-    } else if (hookState === "dropping") {
-        hookY += getCastSpeed() * dt;
-        if (hookY >= HOOK_BOTTOM_Y) {
-            hookY = HOOK_BOTTOM_Y;
-            hookState = "retracting";
-        }
-    } else if (hookState === "retracting") {
-        hookY -= getRetractSpeed() * dt;
-        if (hookY <= HOOK_START_Y) {
-            hookY = HOOK_START_Y;
-            if (caughtFish) { removeFish(caughtFish); caughtFish = null; }
-            hookState = "swinging";
-        }
+  if (hookState === "swinging") {
+    hookX += hookDirection * 145 * dt;
+    if (hookX >= rightLimit) { hookX = rightLimit; hookDirection = -1; }
+    if (hookX <= leftLimit) { hookX = leftLimit; hookDirection = 1; }
+  } else if (hookState === "dropping") {
+    hookY += getCastSpeed() * dt;
+    if (hookY >= HOOK_BOTTOM_Y) {
+      hookY = HOOK_BOTTOM_Y;
+      hookState = "retracting";
     }
-    updateHookGraphic();
-    checkFishCollisions();
+  } else if (hookState === "retracting") {
+    hookY -= getRetractSpeed() * dt;
+    if (hookY <= HOOK_START_Y) {
+      hookY = HOOK_START_Y;
+      if (caughtFish) { removeFish(caughtFish); caughtFish = null; }
+      hookState = "swinging";
+    }
+  }
+  updateHookGraphic();
+  checkFishCollisions();
 }
 
 function updateBoat(dt) {
-    if (!gameRunning || paused) return;
-    const speed = 230;
-    if (keys.left)  boatX -= speed * dt;
-    if (keys.right) boatX += speed * dt;
-    boatX = clamp(boatX, 180, 620);
-    if (hookState === "swinging") {
-        hookX += (boatX - hookX) * 1.6 * dt;
-    }
+  if (!gameRunning || paused) return;
+  const speed = 230;
+  if (keys.left) boatX -= speed * dt;
+  if (keys.right) boatX += speed * dt;
+  boatX = clamp(boatX, 180, 620);
+  if (hookState === "swinging") {
+    hookX += (boatX - hookX) * 1.6 * dt;
+  }
 }
 
 function updateSpawning(dt) {
-    spawnTimer += dt;
-    const interval = currentArea === "deep" ? 0.55 : (currentArea === "lake" ? 0.70 : 0.78);
-    if (spawnTimer >= interval) {
-        spawnTimer = 0;
-        spawnFish();
-        if (Math.random() < 0.42) spawnFish();
-    }
+  spawnTimer += dt;
+  const interval = (currentArea === "space" || currentArea === "volcano") ? 0.50 :
+                   (currentArea === "ice" || currentArea === "deep") ? 0.60 : 0.75;
+  if (spawnTimer >= interval) {
+    spawnTimer = 0;
+    spawnFish();
+    if (Math.random() < 0.42) spawnFish();
+  }
 }
 
 function setArea(id) {
-    if (level < AREAS[id].unlockLevel) return;
-    currentArea = id;
-    areaNameEl.textContent = AREAS[id].name;
-    document.getElementById("bgOcean").style.display = id === "ocean" ? "" : "none";
-    document.getElementById("bgLake").style.display  = id === "lake"  ? "" : "none";
-    document.getElementById("bgDeep").style.display  = id === "deep"  ? "" : "none";
-    for (const f of [...fishes]) removeFish(f);
-    caughtFish = null;
+  if (level < AREAS[id].unlockLevel) return;
+  currentArea = id;
+  areaNameEl.textContent = AREAS[id].name;
+  ["bgOcean","bgLake","bgDeep","bgIce","bgVolcano","bgSpace"].forEach(b => {
+    document.getElementById(b).style.display = (b === AREAS[id].bg) ? "" : "none";
+  });
+  for (const f of [...fishes]) removeFish(f);
+  caughtFish = null;
 }
 
 function openShop() {
-    if (!gameRunning) return;
-    paused = true;
-    document.getElementById("shopCoins").textContent = score;
-    renderShop("rods");
-    document.getElementById("shopOverlay").classList.remove("hidden");
+  if (!gameRunning) return;
+  paused = true;
+  document.getElementById("shopCoins").textContent = score;
+  showGachaTab("rod");
+  document.getElementById("shopOverlay").classList.remove("hidden");
 }
 function closeShop() {
-    document.getElementById("shopOverlay").classList.add("hidden");
-    paused = false;
+  document.getElementById("shopOverlay").classList.add("hidden");
+  paused = false;
 }
 
-function renderShop(tab) {
-    const grid = document.getElementById("shopGrid");
-    grid.innerHTML = "";
-    document.querySelectorAll(".shop-tab").forEach(t => t.classList.toggle("active", t.dataset.tab === tab));
+function showGachaTab(tab) {
+  currentGachaTab = tab;
+  document.querySelectorAll(".shop-tab").forEach(t => t.classList.toggle("active", t.dataset.tab === tab));
+  const gachaArea = document.getElementById("gachaArea");
+  const invArea = document.getElementById("invArea");
 
-    if (tab === "rods") {
-        for (const [id, rod] of Object.entries(RODS)) {
-            const owned = ownedRods.includes(id);
-            const eq = equippedRod === id;
-            const div = document.createElement("div");
-            div.className = "shop-item" + (owned ? " owned" : "") + (eq ? " equipped" : "");
-            div.innerHTML = `<div class="name">${rod.name}</div>
-                <div>Drop ${rod.drop} · Range ${rod.range}</div>
-                <div class="price">${owned ? (eq ? "Equipped" : "Own – Click to equip") : rod.price + " coins"}</div>`;
-            div.onclick = () => {
-                if (owned) { equippedRod = id; renderShop("rods"); }
-                else if (score >= rod.price) {
-                    score -= rod.price; ownedRods.push(id); equippedRod = id;
-                    updateScore(); document.getElementById("shopCoins").textContent = score;
-                    renderShop("rods");
-                }
-            };
-            grid.appendChild(div);
-        }
-    } else {
-        for (const [id, bait] of Object.entries(BAITS)) {
-            const owned = ownedBait.includes(id);
-            const eq = equippedBait === id;
-            const div = document.createElement("div");
-            div.className = "shop-item" + (owned ? " owned" : "") + (eq ? " equipped" : "");
-            div.innerHTML = `<div class="name">${bait.name}</div>
-                <div>Luck +${bait.luck} · Rare +${(bait.rareBonus*100).toFixed(0)}%</div>
-                <div class="price">${owned ? (eq ? "Equipped" : "Own – Click to equip") : bait.price + " coins"}</div>`;
-            div.onclick = () => {
-                if (owned) { equippedBait = id; renderShop("bait"); }
-                else if (score >= bait.price) {
-                    score -= bait.price; ownedBait.push(id); equippedBait = id;
-                    updateScore(); document.getElementById("shopCoins").textContent = score;
-                    renderShop("bait");
-                }
-            };
-            grid.appendChild(div);
-        }
+  if (tab === "inv") {
+    gachaArea.style.display = "none";
+    invArea.style.display = "block";
+    renderInventory();
+  } else {
+    gachaArea.style.display = "block";
+    invArea.style.display = "none";
+    document.getElementById("gachaResult").textContent = "กดสุ่มเพื่อรับของ!";
+    document.getElementById("pullBtn").textContent = `สุ่ม ${tab.toUpperCase()} (${GACHA_COST[tab]} coins)`;
+  }
+}
+
+function renderInventory() {
+  const grid = document.getElementById("invGrid");
+  grid.innerHTML = "";
+
+  const createSection = (title, list, type, equipped, setEquip) => {
+    const header = document.createElement("div");
+    header.className = "inv-section-title";
+    header.textContent = title;
+    grid.appendChild(header);
+
+    if (list.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "inv-empty";
+      empty.textContent = "ยังไม่มี";
+      grid.appendChild(empty);
+      return;
     }
+
+    list.forEach(it => {
+      const pool = type === "rod" ? ROD_POOL :
+                   type === "bait" ? BAIT_POOL :
+                   type === "pet" ? PET_POOL : CHARM_POOL;
+
+      const data = (pool[it.rarity] || []).find(x => x.id === it.id) || { name: it.id };
+      const isEq = equipped && equipped.id === it.id && equipped.rarity === it.rarity;
+
+      const div = document.createElement("div");
+      div.className = "shop-item" + (isEq ? " equipped" : "");
+      div.innerHTML = `
+        <div class="name ${RARITY_CLS[it.rarity]}">${data.name}</div>
+        <div>${it.rarity}</div>
+        <div class="price">${isEq ? "Equipped" : "Equip"}</div>
+      `;
+      div.onclick = () => {
+        setEquip(it);
+        updatePetCharmUI();
+        renderInventory();
+      };
+      grid.appendChild(div);
+    });
+  };
+
+  createSection("🎣 Rods", ownedRods, "rod", equippedRod, it => equippedRod = it);
+  createSection("🪱 Baits", ownedBaits, "bait", equippedBait, it => equippedBait = it);
+  createSection("🐾 Pets", ownedPets, "pet", equippedPet, it => equippedPet = it);
+  createSection("🔮 Charms", ownedCharms, "charm", equippedCharm, it => equippedCharm = it);
 }
 
 document.querySelectorAll(".shop-tab").forEach(t => {
-    t.addEventListener("click", () => renderShop(t.dataset.tab));
+  t.addEventListener("click", () => showGachaTab(t.dataset.tab));
 });
+document.getElementById("pullBtn").addEventListener("click", () => doGacha(currentGachaTab));
 
 function openArea() {
-    if (!gameRunning) return;
-    paused = true;
-    const grid = document.getElementById("areaGrid");
-    grid.innerHTML = "";
-    for (const [id, area] of Object.entries(AREAS)) {
-        const unlocked = level >= area.unlockLevel;
-        const div = document.createElement("div");
-        div.className = "shop-item" + (currentArea === id ? " equipped" : "");
-        div.innerHTML = `<div class="name">${area.name}</div>
-            <div>${unlocked ? "Unlocked" : "Need Lv." + area.unlockLevel}</div>
-            <div class="price">${currentArea === id ? "Current" : (unlocked ? "Travel" : "Locked")}</div>`;
-        if (unlocked) div.onclick = () => { setArea(id); closeArea(); };
-        grid.appendChild(div);
-    }
-    document.getElementById("areaOverlay").classList.remove("hidden");
+  if (!gameRunning) return;
+  paused = true;
+  const grid = document.getElementById("areaGrid");
+  grid.innerHTML = "";
+  for (const [id, area] of Object.entries(AREAS)) {
+    const unlocked = level >= area.unlockLevel;
+    const div = document.createElement("div");
+    div.className = "shop-item" + (currentArea === id ? " equipped" : "");
+    div.innerHTML = `<div class="name">${area.name}</div>
+                     <div>${unlocked ? "Unlocked" : "Need Lv." + area.unlockLevel}</div>
+                     <div class="price">${currentArea === id ? "Current" : (unlocked ? "Travel" : "Locked")}</div>`;
+    if (unlocked) div.onclick = () => { setArea(id); closeArea(); };
+    grid.appendChild(div);
+  }
+  document.getElementById("areaOverlay").classList.remove("hidden");
 }
 function closeArea() {
-    document.getElementById("areaOverlay").classList.add("hidden");
-    paused = false;
+  document.getElementById("areaOverlay").classList.add("hidden");
+  paused = false;
 }
 
 function openUpgrade() {
-    if (!gameRunning) return;
-    paused = true;
-    const grid = document.getElementById("upgradeGrid");
-    grid.innerHTML = "";
-    const defs = [
-        { key: "castSpeed",  name: "Cast Speed",  desc: "Faster drop & retract", max: 5, costBase: 90 },
-        { key: "swingRange", name: "Swing Range", desc: "Wider hook swing",     max: 5, costBase: 80 },
-        { key: "luck",       name: "Luck",        desc: "Better rare fish chance", max: 5, costBase: 110 }
-    ];
-    for (const u of defs) {
-        const lv = upgrades[u.key];
-        const cost = Math.floor(u.costBase * Math.pow(1.65, lv));
-        const div = document.createElement("div");
-        div.className = "shop-item";
-        div.innerHTML = `<div class="name">${u.name} Lv.${lv}/${u.max}</div>
-            <div>${u.desc}</div>
-            <div class="price">${lv >= u.max ? "MAX" : cost + " coins"}</div>`;
-        if (lv < u.max) {
-            div.onclick = () => {
-                if (score >= cost) {
-                    score -= cost; upgrades[u.key]++;
-                    updateScore(); openUpgrade();
-                }
-            };
+  if (!gameRunning) return;
+  paused = true;
+  const grid = document.getElementById("upgradeGrid");
+  grid.innerHTML = "";
+  const defs = [
+    { key: "castSpeed", name: "Cast Speed", desc: "Faster drop & retract", max: 5, costBase: 90 },
+    { key: "swingRange", name: "Swing Range", desc: "Wider hook swing", max: 5, costBase: 80 },
+    { key: "luck", name: "Luck", desc: "Better rare fish chance", max: 5, costBase: 110 }
+  ];
+  for (const u of defs) {
+    const lv = upgrades[u.key];
+    const cost = Math.floor(u.costBase * Math.pow(1.65, lv));
+    const div = document.createElement("div");
+    div.className = "shop-item";
+    div.innerHTML = `<div class="name">${u.name} Lv.${lv}/${u.max}</div>
+                     <div>${u.desc}</div>
+                     <div class="price">${lv >= u.max ? "MAX" : cost + " coins"}</div>`;
+    if (lv < u.max) {
+      div.onclick = () => {
+        if (score >= cost) {
+          score -= cost;
+          upgrades[u.key]++;
+          updateScore();
+          openUpgrade();
         }
-        grid.appendChild(div);
+      };
     }
-    document.getElementById("upgradeOverlay").classList.remove("hidden");
+    grid.appendChild(div);
+  }
+  document.getElementById("upgradeOverlay").classList.remove("hidden");
 }
 function closeUpgrade() {
-    document.getElementById("upgradeOverlay").classList.add("hidden");
-    paused = false;
+  document.getElementById("upgradeOverlay").classList.add("hidden");
+  paused = false;
 }
 
 function startGame() {
-    for (const f of [...fishes]) removeFish(f);
-    fishes = [];
-    score = 0; level = 1; xp = 0; xpToNext = 100;
-    ownedRods = ["basic"]; equippedRod = "basic";
-    ownedBait = ["none"]; equippedBait = "none";
-    upgrades = { castSpeed: 0, swingRange: 0, luck: 0 };
-    boatX = 400; hookX = 400; hookY = HOOK_START_Y;
-    hookDirection = 1; hookState = "swinging"; caughtFish = null;
-    spawnTimer = 0; currentArea = "ocean"; setArea("ocean");
-    updateScore(); updateXPUI();
-    gameRunning = true; paused = false;
-    overlay.classList.add("hidden");
-    document.getElementById("pauseOverlay").classList.add("hidden");
-    updateHookGraphic();
-    spawnFish(); spawnFish(); spawnFish();
+  for (const f of [...fishes]) removeFish(f);
+  fishes = [];
+  score = 0; level = 1; xp = 0; xpToNext = 100;
+  ownedRods = [{id:"basic", rarity:"common"}]; equippedRod = {id:"basic", rarity:"common"};
+  ownedBaits = [{id:"none", rarity:"common"}]; equippedBait = {id:"none", rarity:"common"};
+  ownedPets = []; equippedPet = null;
+  ownedCharms = []; equippedCharm = null;
+  upgrades = { castSpeed: 0, swingRange: 0, luck: 0 };
+  boatX = 400; hookX = 400; hookY = HOOK_START_Y;
+  hookDirection = 1; hookState = "swinging"; caughtFish = null;
+  spawnTimer = 0; currentArea = "ocean"; setArea("ocean");
+  updateScore(); updateXPUI(); updatePetCharmUI();
+  gameRunning = true; paused = false;
+  overlay.classList.add("hidden");
+  document.getElementById("pauseOverlay").classList.add("hidden");
+  updateHookGraphic();
+  spawnFish(); spawnFish(); spawnFish();
 }
 
 function togglePause() {
-    if (!gameRunning) return;
-    paused = !paused;
-    document.getElementById("pauseOverlay").classList.toggle("hidden", !paused);
-    document.getElementById("pauseBtn").textContent = paused ? "▶ Resume" : "⏸ Pause";
+  if (!gameRunning) return;
+  paused = !paused;
+  document.getElementById("pauseOverlay").classList.toggle("hidden", !paused);
+  document.getElementById("pauseBtn").textContent = paused ? "▶ Resume" : "⏸ Pause";
 }
 
 function gameLoop(timestamp) {
-    if (!lastTime) lastTime = timestamp;
-    let dt = Math.min((timestamp - lastTime) / 1000, 0.05);
-    lastTime = timestamp;
+  if (!lastTime) lastTime = timestamp;
+  let dt = Math.min((timestamp - lastTime) / 1000, 0.05);
+  lastTime = timestamp;
 
-    if (gameRunning && !paused) {
-        updateBoat(dt);
-        updateFishes(dt);
-        updateSpawning(dt);
-        updateHook(dt);
-    }
-    requestAnimationFrame(gameLoop);
+  if (gameRunning && !paused) {
+    updateBoat(dt);
+    updateFishes(dt);
+    updateSpawning(dt);
+    updateHook(dt);
+  }
+  requestAnimationFrame(gameLoop);
 }
 
 game.addEventListener("click", e => {
-    if (e.target.tagName === "BUTTON" || e.target.closest(".overlay")) return;
-    castHook();
+  if (e.target.tagName === "BUTTON" || e.target.closest(".overlay")) return;
+  castHook();
 });
 document.addEventListener("keydown", e => {
-    if (e.code === "Space" || e.key === " ") { e.preventDefault(); castHook(); }
-    if (e.key === "ArrowLeft"  || e.key === "a" || e.key === "A") keys.left = true;
-    if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") keys.right = true;
-    if (e.key === "p" || e.key === "P") togglePause();
+  if (e.code === "Space" || e.key === " ") { e.preventDefault(); castHook(); }
+  if (e.key === "ArrowLeft" || e.key === "a" || e.key === "A") keys.left = true;
+  if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") keys.right = true;
+  if (e.key === "p" || e.key === "P") togglePause();
 });
 document.addEventListener("keyup", e => {
-    if (e.key === "ArrowLeft"  || e.key === "a" || e.key === "A") keys.left = false;
-    if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") keys.right = false;
+  if (e.key === "ArrowLeft" || e.key === "a" || e.key === "A") keys.left = false;
+  if (e.key === "ArrowRight" || e.key === "d" || e.key === "D") keys.right = false;
 });
 
 startButton.addEventListener("click", startGame);
 document.getElementById("pauseBtn").addEventListener("click", togglePause);
 document.getElementById("resumeBtn").addEventListener("click", togglePause);
 document.getElementById("restartBtn").addEventListener("click", () => {
-    if (confirm("Restart game? Progress will be reset.")) startGame();
+  if (confirm("Restart game? Progress will be reset.")) startGame();
 });
 document.getElementById("shopBtn").addEventListener("click", openShop);
 document.getElementById("closeShop").addEventListener("click", closeShop);
